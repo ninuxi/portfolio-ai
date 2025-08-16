@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Antonio Mainenti - AI & Interactive Systems Portfolio</title>
+    <script type="text/javascript">
+        // Rileva la lingua del browser dell'utente
+        const userLang = navigator.language || navigator.userLanguage;
+
+        // Reindirizza a /it.html se la lingua del browser è italiano
+        if (userLang.startsWith('it')) {
+            window.location.replace('/it.html');
+        } else {
+            // Altrimenti, reindirizza alla versione inglese come default
+            window.location.replace('/en.html');
+        }
+    </script>
+</head>
+<body>
+    <p>Redirecting...</p>
+</body>
+</html>
