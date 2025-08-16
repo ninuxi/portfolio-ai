@@ -20,65 +20,94 @@
 </head>
 <body class="bg-slate-900 text-gray-300">
 
-    <div class="container mx-auto max-w-4xl px-4 py-16">
+    <div class="container mx-auto max-w-5xl px-4 py-16">
 
         <header class="text-center mb-24">
             <h1 class="text-5xl md:text-6xl font-black text-white leading-tight">Antonio Mainenti</h1>
-            <p class="text-xl md:text-2xl mt-2 gradient-text font-semibold">Creative Technologist & AI Systems Specialist</p>
-            <p class="mt-4 max-w-2xl mx-auto text-gray-400">
-                Progetto e sviluppo sistemi intelligenti che uniscono computer vision, analisi audio e protocolli professionali per creare esperienze artistiche interattive e reattive.
+            <p class="text-xl md:text-2xl mt-2 gradient-text font-semibold">
+                Creative Technologist & Audio AI Engineer
             </p>
-            <div class="mt-8 flex justify-center gap-6">
-                <a href="https://github.com/ninuxi" target="_blank" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold px-6 py-3 rounded-lg transition-colors">GitHub</a>
-                <a href="#mood-project" class="bg-purple-600 hover:bg-purple-500 text-white font-semibold px-6 py-3 rounded-lg transition-colors">Vedi Progetto MOOD</a>
+            <p class="mt-4 max-w-3xl mx-auto text-gray-400">
+                Specialista in sistemi AI per audio interattivo e beni culturali. Progetto e sviluppo soluzioni che uniscono computer vision, spatial audio e deep learning.
+            </p>
+            <div class="mt-8 flex justify-center flex-wrap gap-4">
+                <a href="https://github.com/ninuxi" target="_blank" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold px-5 py-2 rounded-lg transition-colors">GitHub</a>
+                <a href="https://mainenti.net" target="_blank" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold px-5 py-2 rounded-lg transition-colors">mainenti.net</a>
+                <a href="https://mood-adaptive-art-system.vercel.app/" target="_blank" class="bg-purple-600 hover:bg-purple-500 text-white font-semibold px-5 py-2 rounded-lg transition-colors">Live Demo: MOOD System</a>
             </div>
         </header>
 
         <main>
-            <section id="mood-project" class="bg-slate-800/50 p-8 rounded-2xl border border-purple-500/30 shadow-2xl shadow-purple-900/20">
-                <h2 class="text-sm font-bold uppercase tracking-widest text-purple-400 mb-2">Progetto Principale</h2>
-                <h3 class="text-4xl font-bold text-white mb-4">MOOD: Adaptive Artistic Environment</h3>
-                <p class="mb-6 text-gray-400">
-                    MOOD è un sistema AI full-stack che analizza l'ambiente in tempo reale (conteggio persone, movimento, audio) per controllare dinamicamente installazioni artistiche. Integra software standard del settore come QLab, Resolume e GrandMA3 tramite protocolli OSC e ArtNet per creare un'esperienza immersiva che si adatta al pubblico.
-                </p>
-                
-                <div class="border-t border-gray-700 pt-6">
-                    <h4 class="font-semibold text-white mb-3">Stack Tecnologico:</h4>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-blue-500/20 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full">Next.js</span>
-                        <span class="bg-sky-500/20 text-sky-300 text-xs font-semibold px-3 py-1 rounded-full">TypeScript</span>
-                        <span class="bg-green-500/20 text-green-300 text-xs font-semibold px-3 py-1 rounded-full">TensorFlow.js</span>
-                        <span class="bg-yellow-500/20 text-yellow-300 text-xs font-semibold px-3 py-1 rounded-full">Zustand</span>
-                        <span class="bg-indigo-500/20 text-indigo-300 text-xs font-semibold px-3 py-1 rounded-full">OSC</span>
-                        <span class="bg-pink-500/20 text-pink-300 text-xs font-semibold px-3 py-1 rounded-full">Tailwind CSS</span>
+            <h2 class="text-4xl font-bold text-white text-center mb-12">Progetti</h2>
+
+            <div class="grid lg:grid-cols-2 gap-10 mb-16">
+
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-purple-500/30 shadow-2xl shadow-purple-900/20 flex flex-col">
+                    <h3 class="text-3xl font-bold text-white mb-3">MOOD: Adaptive Artistic Environment</h3>
+                    <p class="mb-4 text-gray-400 flex-grow">
+                        Sistema AI full-stack che analizza l'ambiente (persone, movimento, audio) per controllare dinamicamente installazioni artistiche tramite OSC/ArtNet.
+                    </p>
+                    <div class="mt-auto">
+                        <div class="mb-6">
+                            <h4 class="font-semibold text-white mb-3">Stack Tecnologico:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-blue-500/20 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full">Next.js</span>
+                                <span class="bg-sky-500/20 text-sky-300 text-xs font-semibold px-3 py-1 rounded-full">TypeScript</span>
+                                <span class="bg-green-500/20 text-green-300 text-xs font-semibold px-3 py-1 rounded-full">TensorFlow.js</span>
+                                <span class="bg-indigo-500/20 text-indigo-300 text-xs font-semibold px-3 py-1 rounded-full">OSC</span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/ninuxi/mood-showcase" target="_blank" class="bg-white text-slate-900 font-semibold px-5 py-3 rounded-lg transition-transform hover:scale-105 inline-block">Esplora lo Showcase del Codice</a>
+                        <p class="text-xs text-gray-500 mt-2">(Nota: Il repository completo non è pubblico. Lo showcase illustra i componenti chiave.)</p>
                     </div>
                 </div>
 
-                <div class="mt-8 flex flex-wrap gap-4">
-                    <a href="https://github.com/ninuxi/mood-adaptive-art-system" target="_blank" class="bg-white text-slate-900 font-semibold px-5 py-3 rounded-lg transition-transform hover:scale-105">Vedi Codice Sorgente su GitHub</a>
-                    <a href="#" class="border border-gray-600 text-gray-300 font-semibold px-5 py-3 rounded-lg transition-colors hover:bg-gray-700 hover:border-gray-500">Case Study (In preparazione)</a>
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-purple-500/30 shadow-2xl shadow-purple-900/20 flex flex-col">
+                    <h3 class="text-3xl font-bold text-white mb-3">Audio AI Projects</h3>
+                    <p class="mb-4 text-gray-400 flex-grow">
+                        Collezione di librerie e modelli per l'analisi e la sintesi audio-reattiva tramite deep learning, inclusi classificazione di eventi sonori e generazione di texture.
+                    </p>
+                    <div class="mt-auto">
+                         <div class="mb-6">
+                            <h4 class="font-semibold text-white mb-3">Stack Tecnologico:</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-orange-500/20 text-orange-300 text-xs font-semibold px-3 py-1 rounded-full">Python</span>
+                                <span class="bg-red-500/20 text-red-300 text-xs font-semibold px-3 py-1 rounded-full">PyTorch</span>
+                                <span class="bg-yellow-500/20 text-yellow-300 text-xs font-semibold px-3 py-1 rounded-full">Librosa</span>
+                                <span class="bg-teal-500/20 text-teal-300 text-xs font-semibold px-3 py-1 rounded-full">Jupyter</span>
+                            </div>
+                        </div>
+                        <a href="https://github.com/ninuxi/audio-ai-projects" target="_blank" class="bg-white text-slate-900 font-semibold px-5 py-3 rounded-lg transition-transform hover:scale-105 inline-block">Vedi i Progetti su GitHub</a>
+                    </div>
                 </div>
-            </section>
-        </main>
+            </div>
 
-        <section id="other-projects" class="py-24">
-            <h2 class="text-3xl font-bold text-white text-center mb-12">Altri Progetti</h2>
-            <div class="grid md:grid-cols-2 gap-8">
+            <h3 class="text-2xl font-bold text-white text-center mb-8">Laboratorio & Ricerca</h3>
+            <div class="grid md:grid-cols-3 gap-6">
+                
                 <div class="bg-slate-800/50 p-6 rounded-xl border border-gray-700/50 transition-transform hover:scale-105 hover:border-purple-500/50">
-                    <h3 class="font-bold text-xl text-white">Nome Progetto 2</h3>
-                    <p class="text-sm text-gray-400 mt-2">Breve descrizione del progetto e delle tecnologie usate. Ad esempio: un sistema di tracking di oggetti per performance teatrali interattive.</p>
-                    <a href="#" class="text-purple-400 mt-4 inline-block font-semibold">Vedi Dettagli &rarr;</a>
+                    <h4 class="font-bold text-xl text-white">AI Audio-Vision Lab</h4>
+                    <p class="text-sm text-gray-400 mt-2">Prototipazione di sistemi che correlano input visivi da webcam con output sonori generativi per esplorare la sinestesia computazionale.</p>
+                    <a href="https://github.com/ninuxi/ai-audio-vision-lab" target="_blank" class="text-purple-400 mt-4 inline-block font-semibold">Vedi Codice &rarr;</a>
                 </div>
+
                 <div class="bg-slate-800/50 p-6 rounded-xl border border-gray-700/50 transition-transform hover:scale-105 hover:border-purple-500/50">
-                    <h3 class="font-bold text-xl text-white">Nome Progetto 3</h3>
-                    <p class="text-sm text-gray-400 mt-2">Breve descrizione del progetto. Ad esempio: un generatore di visualizzazioni audio real-time basato su WebGL.</p>
-                    <a href="#" class="text-purple-400 mt-4 inline-block font-semibold">Vedi Dettagli &rarr;</a>
+                    <h4 class="font-bold text-xl text-white">Acoustic Space Analyzer AI</h4>
+                    <p class="text-sm text-gray-400 mt-2">Tool di analisi acustica che utilizza reti neurali per classificare le caratteristiche di uno spazio (riverbero, materiali) da un impulso sonoro.</p>
+                    <a href="https://github.com/ninuxi/acoustic-space-analyzer-ai-pro" target="_blank" class="text-purple-400 mt-4 inline-block font-semibold">Vedi Codice &rarr;</a>
                 </div>
+
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-gray-700/50 transition-transform hover:scale-105 hover:border-purple-500/50">
+                     <h4 class="font-bold text-xl text-white">Heritage Sonification</h4>
+                    <p class="text-sm text-gray-400 mt-2">Esplorazione di tecniche per la sonificazione di dati provenienti da beni culturali (immagini, modelli 3D) per creare esperienze museali aumentate.</p>
+                    <a href="#" class="text-gray-500 mt-4 inline-block font-semibold cursor-not-allowed">Privato &rarr;</a>
+                </div>
+
             </div>
         </section>
 
-        <footer class="text-center text-gray-500 border-t border-gray-800 pt-8">
-            <p>&copy; 2025 Antonio Mainenti. Sviluppato con Next.js e Tailwind CSS, deployato su GitHub Pages.</p>
+        <footer class="text-center text-gray-500 border-t border-gray-800 pt-8 mt-16">
+            <p>&copy; 2025 Antonio Mainenti. Sviluppato con HTML e Tailwind CSS, deployato su GitHub Pages.</p>
         </footer>
 
     </div>
