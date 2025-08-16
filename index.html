@@ -1,39 +1,55 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mainenti | Portfolio AI & Suono</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NOME COGNOME - AI & Interactive Art Portfolio</title>
+    <link href="style.css" rel="stylesheet">
 </head>
-<body>
-  <header>
-    <h1>Mainenti</h1>
-    <p>Sound Engineer | Sound Designer specialized in AI-Audio Solutions</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="chi_sono.html">About me</a>
-      <a href="projects.html">Projects</a>
-      
-    </nav>
-  </header>
+<body class="bg-gray-900 text-white">
 
-  <main>
-    <section>
-      <h2>Benvenuto</h2>
-      <p>Questo è il mio portfolio creativo dove unisco intelligenza artificiale, suono e visione. Esplora i miei progetti, la mia storia e contattami per collaborazioni artistiche e tecnologiche.</p>
-    </section>
+    <header class="text-center py-16">
+        <h1 class="text-4xl font-bold">NOME COGNOME</h1>
+        <p class="text-xl text-purple-400">Creative Technologist | Specialista in Sistemi Interattivi AI</p>
+        <div class="mt-4">
+            <a href="https://github.com/ninuxi" class="text-gray-400 hover:text-white">GitHub</a> |
+            <a href="LINKEDIN_URL" class="text-gray-400 hover:text-white">LinkedIn</a>
+        </div>
+    </header>
 
-    <section>
-      <h2>Welcome</h2>
-      <p>This is my creative portfolio where I combine artificial intelligence, sound, and vision. Explore my projects, background, and contact me for artistic and tech collaborations.</p>
-    </section>
-  </main>
+    <main class="container mx-auto px-4">
+        <section id="mood-project" class="bg-gray-800 p-8 rounded-lg border border-purple-500/30">
+            <h2 class="text-3xl font-bold mb-2">Progetto in Evidenza: MOOD System</h2>
+            <p class="mb-4">Un sistema AI full-stack per il controllo di installazioni artistiche interattive in tempo reale.</p>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                    <h3 class="font-bold text-purple-400">Tech Stack:</h3>
+                    <p>Next.js, TypeScript, Zustand, TensorFlow.js, OSC, Web Audio API.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold text-purple-400">Obiettivo:</h3>
+                    <p>Creare ambienti reattivi che adattano luci, suoni e video in base all'analisi del pubblico.</p>
+                </div>
+            </div>
 
-  <footer id="contact">
-    <p>Contattami: <a href="mailto:oggettosonoro@gmail.com">oggettosonoro@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/ninuxi" target="_blank">@ninuxi</a></p>
-  </footer>
+            <div class="mt-6">
+                <a href="CASE_STUDY_MOOD.html" class="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded">Leggi il Case Study Tecnico</a>
+                <a href="https://github.com/ninuxi/mood-adaptive-art-system" class="ml-4 text-gray-400 hover:text-white">Vedi il Codice su GitHub</a>
+            </div>
+        </section>
+
+        <section id="other-projects" class="py-16">
+            <h2 class="text-2xl font-bold text-center mb-8">Altri Progetti AI</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg">
+                    <h3 class="font-bold">NOME PROGETTO 1</h3>
+                    <p class="text-sm text-gray-400 mt-2">Breve descrizione del progetto e delle tecnologie usate.</p>
+                    <a href="URL_GITHUB_PROGETTO_1" class="text-purple-400 mt-4 inline-block">Vedi Codice &rarr;</a>
+                </div>
+                </div>
+        </section>
+    </main>
+
 </body>
 </html>
