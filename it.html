@@ -146,7 +146,10 @@
                         </div>
                         <div id="demo2-content" class="hidden mt-6 bg-slate-900/50 p-6 rounded-lg border border-gray-700">
                              <h4 class="text-xl font-bold text-purple-400 mb-4">Batch Processor</h4>
-                             <p class="text-sm text-gray-400 mt-1 mb-3">Questo strumento a riga di comando è progettato per elaborare in batch file audio. Esegue analisi, applica trasformazioni e genera report in modo automatico su intere cartelle, ottimizzando i flussi di lavoro.</p>
+                             <p class="text-sm text-gray-400 mt-1 mb-3 space-y-2">
+                                <span>Ideale per la preparazione di dataset per il machine learning, questo script Python automatizza task ripetitivi come il resampling, la normalizzazione del volume, il trimming del silenzio e l'estrazione di feature (es. MFCC, spettrogrammi).</span>
+                                <span>L'utente può definire una catena di processi tramite un file di configurazione, rendendo lo strumento estremamente flessibile per ottimizzare i flussi di lavoro di data preparation.</span>
+                             </p>
                              <img src="batch-processor.gif" alt="Demo del Batch Processor in esecuzione" class="rounded-md border border-gray-600 mt-4">
                         </div>
                         <div id="demo4-content" class="hidden mt-6 bg-slate-900/50 p-6 rounded-lg border border-gray-700">
@@ -154,7 +157,10 @@
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div class="bg-slate-800 p-4 rounded-lg">
                                     <h5 class="font-semibold text-white">Integrazione Archivio RAI</h5>
-                                    <p class="text-sm text-gray-400 mt-1 mb-3">Questo progetto include una potente integrazione con RAI Archive Tool, fornendo funzionalità specializzate per l'elaborazione e l'analisi di contenuti audio delle Teche Rai.</p>
+                                    <p class="text-sm text-gray-400 mt-1 mb-3 space-y-2">
+                                        <span>Sfruttando l'API del tool, lo script non si limita al download, ma arricchisce i contenuti con metadati, segmenta l'audio per identificare parlato/musica e applica modelli di speech-to-text per la trascrizione.</span>
+                                        <span>Questo permette di rendere l'archivio ricercabile e di analizzare grandi quantità di dati audio, trasformando il materiale grezzo in informazione strutturata.</span>
+                                    </p>
                                     <img src="demo-rai.gif" alt="Demo del terminale che esegue Rai Archive Tool" class="rounded-md border border-gray-600">
                                     <p class="text-xs font-semibold text-gray-300 mt-3 mb-1">Comando:</p>
                                     <pre class="bg-gray-900 p-2 rounded-md text-cyan-400 text-xs overflow-x-auto"><code>python rai-archive-tool/rai_archive_tool.py</code></pre>
