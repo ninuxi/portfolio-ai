@@ -141,7 +141,7 @@
                                 <button data-accordion-trigger="demo2" class="bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors flex items-center gap-2">Demo 2: Batch Processor <span class="arrow">▼</span></button>
                                 <a href="https://huggingface.co/spaces/antoniiiii/call-analytics" target="_blank" class="bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors">Demo 3: Call Analytics</a>
                                 <button data-accordion-trigger="demo4" class="bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors flex items-center gap-2">Demo 4: Lab Week <span class="arrow">▼</span></button>
-                                <button data-accordion-trigger="demo5" class="bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors flex items-center gap-2">Demo 5: MAXXI Experience <span class="arrow">▼</span></button>
+                                <button data-accordion-trigger="demo5" class="bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors flex items-center gap-2">Demo 5: Museum Audio AI <span class="arrow">▼</span></button>
                                 <a href="#" class="bg-purple-600/40 hover:bg-purple-500/60 text-white/70 text-xs font-semibold px-3 py-1.5 rounded-full transition-colors cursor-pointer">Demo 6 (Soon)</a>
                            </div>
                         </div>
@@ -156,19 +156,27 @@
                         <div id="demo4-content" class="hidden mt-6 bg-slate-900/50 p-6 rounded-lg border border-gray-700">
                              <h4 class="text-xl font-bold text-purple-400 mb-4">Demo Week 4</h4>
                             <div class="grid md:grid-cols-2 gap-6">
-                                <div class="bg-slate-800 p-4 rounded-lg">
+                                <div class="bg-slate-800 p-4 rounded-lg flex flex-col">
                                     <h5 class="font-semibold text-white">RAI Archive Integration</h5>
-                                    <p class="text-sm text-gray-400 mt-1 mb-3 space-y-2">
-                                        <span>Leveraging the tool's API, the script goes beyond simple downloading to enrich content with metadata, segment audio to identify speech/music, and apply speech-to-text models for transcription.</span>
-                                        <span>This makes the archive searchable and allows for the analysis of vast amounts of audio data, turning raw material into structured information.</span>
+                                    <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">
+                                        Leveraging the tool's API, the script enriches content with metadata, segments audio to identify speech/music, and applies speech-to-text models for transcription.
                                     </p>
-                                    <img src="demo-rai.gif" alt="Terminal demo running the Rai Archive Tool" class="rounded-md border border-gray-600">
-                                    <p class="text-xs font-semibold text-gray-300 mt-3 mb-1">Command:</p>
-                                    <pre class="bg-gray-900 p-2 rounded-md text-cyan-400 text-xs overflow-x-auto"><code>python rai-archive-tool/rai_archive_tool.py</code></pre>
+                                    <img src="demo-rai.gif" alt="Terminal demo running the Rai Archive Tool" class="rounded-md border border-gray-600 mt-auto">
                                 </div>
-                                <div class="bg-slate-800 p-4 rounded-lg">
-                                    <h5 class="font-semibold text-white">Example 2: [Example 2 Name]</h5>
-                                    <p class="text-sm text-gray-400 mt-1">Here you can add the description for the second tool or experiment from Week 4.</p>
+                                <div class="bg-slate-800 p-4 rounded-lg flex flex-col">
+                                    <h5 class="font-semibold text-white">Audio Metadata Extraction</h5>
+                                    <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">A script for automated analysis and extraction of technical and descriptive metadata from audio files, essential for cataloging large archives.</p>
+                                    <img src="test_metadata.gif" alt="Metadata extraction demo" class="rounded-md border border-gray-600 mt-auto">
+                                </div>
+                                <div class="bg-slate-800 p-4 rounded-lg flex flex-col">
+                                    <h5 class="font-semibold text-white">Cultural Heritage Classifier</h5>
+                                    <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">A deep learning model trained to classify audio-visual content related to cultural heritage (dialogues, period music, sounds).</p>
+                                    <img src="heritage_classifier.gif" alt="Cultural classifier demo" class="rounded-md border border-gray-600 mt-auto">
+                                </div>
+                                <div class="bg-slate-800 p-4 rounded-lg flex flex-col">
+                                    <h5 class="font-semibold text-white">Cultural AI Platform</h5>
+                                    <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">A simulation of a web platform that integrates the various tools, offering a single interface for the analysis and search of digital archives.</p>
+                                    <img src="cultural_ai_platform.gif" alt="AI platform demo" class="rounded-md border border-gray-600 mt-auto">
                                 </div>
                             </div>
                         </div>
