@@ -4,13 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Progetto MOOD - aiforlive.com</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-        /* Stili Generali */
+        /* Stili Generali con Tema Scuro */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Inter', sans-serif;
             line-height: 1.7;
-            background-color: #ffffff;
-            color: #333;
+            background-color: #0f172a; /* bg-slate-900 */
+            color: #d1d5db; /* text-gray-300 */
             margin: 0;
             padding: 0;
         }
@@ -19,12 +23,13 @@
             max-width: 900px;
             margin: 40px auto;
             padding: 20px;
-            background: #fff;
-            border-radius: 8px;
+            background-color: rgba(30, 41, 59, 0.5); /* bg-slate-800/50 */
+            border-radius: 16px; /* rounded-2xl */
+            border: 1px solid rgba(192, 132, 252, 0.3); /* border-purple-500/30 */
         }
         /* Tipografia */
         h1, h2, h3 {
-            color: #1a1a1a;
+            color: #ffffff;
             font-weight: 700;
             margin-top: 1.5em;
         }
@@ -32,10 +37,11 @@
             font-size: 2.8em;
             text-align: center;
             margin-bottom: 0.5em;
+            margin-top: 0.5em;
         }
         h2 {
             font-size: 2em;
-            border-bottom: 2px solid #007bff;
+            border-bottom: 2px solid #60a5fa; /* Blu del gradiente */
             padding-bottom: 10px;
         }
         h3 {
@@ -43,19 +49,22 @@
         }
         p, li {
             font-size: 1.1em;
+            color: #9ca3af; /* text-gray-400 */
         }
         ul {
             list-style-type: disc;
             padding-left: 20px;
         }
         strong {
-            color: #0056b3;
+            color: #c084fc; /* Viola del gradiente */
         }
         code {
-            background-color: #e9ecef;
-            padding: 2px 6px;
-            border-radius: 4px;
+            background-color: rgba(30, 41, 59, 1); /* bg-slate-800 */
+            color: #a5b4fc; /* text-indigo-300 */
+            padding: 3px 7px;
+            border-radius: 6px;
             font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+            font-size: 0.9em;
         }
         /* Selettore Lingua */
         .language-switcher {
@@ -64,9 +73,9 @@
         }
         .lang-button {
             padding: 10px 20px;
-            border: 1px solid #ddd;
-            background-color: #f8f9fa;
-            color: #555;
+            border: 1px solid #4b5563; /* border-gray-600 */
+            background-color: #374151; /* bg-gray-700 */
+            color: #d1d5db; /* text-gray-300 */
             cursor: pointer;
             font-size: 1em;
             transition: background-color 0.3s, color 0.3s;
@@ -81,9 +90,21 @@
             border-left: none;
         }
         .lang-button.active {
-            background-color: #007bff;
+            background-color: #60a5fa; /* Blu */
             color: white;
-            border-color: #007bff;
+            border-color: #60a5fa;
+        }
+        /* Link per tornare alla Home */
+        .back-link {
+            display: inline-block;
+            margin-bottom: 25px;
+            font-weight: 600;
+            color: #9ca3af; /* text-gray-400 */
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .back-link:hover {
+            color: #ffffff;
         }
         /* Utilità */
         .hidden {
@@ -95,7 +116,7 @@
             margin-top: 50px;
             font-size: 1.4em;
             font-weight: bold;
-            color: #007bff;
+            color: #c084fc; /* Viola */
         }
     </style>
 </head>
@@ -108,95 +129,97 @@
         </div>
 
         <div id="content-it">
-            [cite_start]<h1>MOOD: Sistema di Controllo Adattivo per Ambienti Esperienziali [cite: 1]</h1>
+            <a href="it.html" class="back-link">← Torna alla Home</a>
+            <h1>MOOD: Sistema di Controllo Adattivo per Ambienti Esperienziali</h1>
             <p>
-                [cite_start]MOOD è un sistema di controllo centralizzato che integra un'intelligenza artificiale per l'analisi ambientale con i software standard del settore dello spettacolo, progettato per automatizzare e ottimizzare la regia di installazioni interattive e spazi coinvolgenti. [cite: 2] [cite_start]Il sistema offre una soluzione avanzata per superare la natura statica degli allestimenti tradizionali, abilitando la creazione di ambienti che si modificano dinamicamente in base a condizioni reali e misurabili. [cite: 3]
+                MOOD è un sistema di controllo centralizzato che integra un'intelligenza artificiale per l'analisi ambientale con i software standard del settore dello spettacolo, progettato per automatizzare e ottimizzare la regia di installazioni interattive e spazi coinvolgenti. Il sistema offre una soluzione avanzata per superare la natura statica degli allestimenti tradizionali, abilitando la creazione di ambienti che si modificano dinamicamente in base a condizioni reali e misurabili.
             </p>
 
-            [cite_start]<h2>Architettura Funzionale del Sistema [cite: 4]</h2>
-            [cite_start]<p>MOOD opera attraverso tre moduli principali integrati: [cite: 5]</p>
+            <h2>Architettura Funzionale del Sistema</h2>
+            <p>MOOD opera attraverso tre moduli principali integrati:</p>
             
-            <h3>1. [cite_start]Engine di Analisi Ambientale (AI-Powered) [cite: 6]</h3>
+            <h3>1. Engine di Analisi Ambientale (AI-Powered)</h3>
             <ul>
-                [cite_start]<li><strong>Computer Vision:</strong> Attraverso telecamere, l'engine effettua un'analisi in tempo reale della audience, quantificando parametri aggregati come densità della folla, conteggio delle persone e livello di energia cinetica (movimento). [cite: 7] [cite_start]Il sistema è progettato per garantire la privacy, analizzando i dati in forma anonima per percepire l'atmosfera generale senza identificare individui. [cite: 8]</li>
-                [cite_start]<li><strong>Audio Analysis:</strong> Utilizzando microfoni ambientali, il sistema analizza il paesaggio sonoro per classificarlo. [cite: 9] [cite_start]Distingue tra silenzio, brusio di fondo, conversazioni e musica, misurando metriche quali volume (dB) ed energia spettrale per arricchire il contesto decisionale dell'AI. [cite: 10]</li>
+                <li><strong>Computer Vision:</strong> Attraverso telecamere, l'engine effettua un'analisi in tempo reale della audience, quantificando parametri aggregati come densità della folla, conteggio delle persone e livello di energia cinetica (movimento). Il sistema è progettato per garantire la privacy, analizzando i dati in forma anonima per percepire l'atmosfera generale senza identificare individui.</li>
+                <li><strong>Audio Analysis:</strong> Utilizzando microfoni ambientali, il sistema analizza il paesaggio sonoro per classificarlo. Distingue tra silenzio, brusio di fondo, conversazioni e musica, misurando metriche quali volume (dB) ed energia spettrale per arricchire il contesto decisionale dell'AI.</li>
             </ul>
 
-            <h3>2. [cite_start]Controllo Centralizzato e Integrazione Nativa [cite: 11]</h3>
-            [cite_start]<p>MOOD agisce come un <strong>direttore di orchestra</strong>, interfacciandosi fluentemente con i software professionali standard del settore. [cite: 12] [cite_start]L'attuale implementazione include il controllo nativo di: [cite: 13]</p>
+            <h3>2. Controllo Centralizzato e Integrazione Nativa</h3>
+            <p>MOOD agisce come un <strong>direttore di orchestra</strong>, interfacciandosi fluentemente con i software professionali standard del settore. L'attuale implementazione include il controllo nativo di:</p>
             <ul>
-                [cite_start]<li><code>QLab</code>: Gestione avanzata di cue audio/video, regolazione dinamica dei volumi e playback. [cite: 14]</li>
-                [cite_start]<li><code>Resolume Arena</code>: Manipolazione in tempo reale di effetti visivi, opacità dei layer e sincronizzazione delle clip. [cite: 15]</li>
-                [cite_start]<li><code>Console Luci (via OSC/ArtNet)</code>: Compatibilità con piattaforme come Chamsys MagicQ e GrandMA3 per il controllo di scene, parametri di intensità e colore. [cite: 16]</li>
+                <li><code>QLab</code>: Gestione avanzata di cue audio/video, regolazione dinamica dei volumi e playback.</li>
+                <li><code>Resolume Arena</code>: Manipolazione in tempo reale di effetti visivi, opacità dei layer e sincronizzazione delle clip.</li>
+                <li><code>Console Luci (via OSC/ArtNet)</code>: Compatibilità con piattaforme come Chamsys MagicQ e GrandMA3 per il controllo di scene, parametri di intensità e colore.</li>
             </ul>
-            [cite_start]<p>L'architettura del sistema è <strong>intrinsecamente modulare e scalabile</strong>. [cite: 17] [cite_start]L'integrazione di ulteriori software (es. TouchDesigner, Ableton Live) o protocolli di comunicazione (MIDI, DMX) è nativa, garantendo la longevità e l'adattabilità dell'investimento. [cite: 18]</p>
+            <p>L'architettura del sistema è <strong>intrinsecamente modulare e scalabile</strong>. L'integrazione di ulteriori software (es. TouchDesigner, Ableton Live) o protocolli di comunicazione (MIDI, DMX) è nativa, garantendo la longevità e l'adattabilità dell'investimento.</p>
             
-            <h3>3. [cite_start]Interfaccia di Direzione Artistica (Mood Designer) [cite: 19]</h3>
-            [cite_start]<p>Il sistema è dotato di un'interfaccia di controllo che permette a direttori artistici e tecnici di programmare il comportamento dell'installazione tramite una logica condizionale (IF-THEN). [cite: 20] [cite_start]Esempi di regole implementabili: [cite: 21]</p>
+            <h3>3. Interfaccia di Direzione Artistica (Mood Designer)</h3>
+            <p>Il sistema è dotato di un'interfaccia di controllo che permette a direttori artistici e tecnici di programmare il comportamento dell'installazione tramite una logica condizionale (IF-THEN). Esempi di regole implementabili:</p>
             <ul>
-                [cite_start]<li><strong>Scenario 1 (Alta Energia):</strong> <code>SE</code> il numero di persone supera le 20 unità <code>E</code> il livello di movimento aggregato è superiore al 70%, <code>ALLORA</code> il sistema attiva il mood "Energetic". [cite: 22]</li>
-                [cite_start]<li><strong>Scenario 2 (Atmosfera Calma):</strong> <code>SE</code> il volume ambientale è inferiore a 40dB <code>E</code> il movimento è quasi assente, <code>ALLORA</code> il sistema attiva il mood "Contemplative" per favorire la riflessione. [cite: 23]</li>
+                <li><strong>Scenario 1 (Alta Energia):</strong> <code>SE</code> il numero di persone supera le 20 unità <code>E</code> il livello di movimento aggregato è superiore al 70%, <code>ALLORA</code> il sistema attiva il mood "Energetic".</li>
+                <li><strong>Scenario 2 (Atmosfera Calma):</strong> <code>SE</code> il volume ambientale è inferiore a 40dB <code>E</code> il movimento è quasi assente, <code>ALLORA</code> il sistema attiva il mood "Contemplative" per favorire la riflessione.</li>
             </ul>
-            [cite_start]<p><strong>Apprendimento Automatico:</strong> L'AI non si limita a un'esecuzione deterministica delle regole, ma è dotata di un modulo di apprendimento. [cite: 24] [cite_start]Analizza nel tempo le correlazioni tra le configurazioni attivate (luci, suoni, video) e le metriche di coinvolgimento del pubblico, ottimizzando autonomamente le proprie decisioni per massimizzare l'impatto dell'esperienza. [cite: 25]</p>
+            <p><strong>Apprendimento Automatico:</strong> L'AI non si limita a un'esecuzione deterministica delle regole, ma è dotata di un modulo di apprendimento. Analizza nel tempo le correlazioni tra le configurazioni attivate (luci, suoni, video) e le metriche di coinvolgimento del pubblico, ottimizzando autonomamente le proprie decisioni per massimizzare l'impatto dell'esperienza.</p>
 
-            [cite_start]<h2>Vantaggi Strategici e Operativi [cite: 26]</h2>
-            [cite_start]<p>MOOD è stato ingegegnerizzato per offrire un ritorno sull'investimento tangibile e misurabile. [cite: 27]</p>
+            <h2>Vantaggi Strategici e Operativi</h2>
+            <p>MOOD è stato ingegnerizzato per offrire un ritorno sull'investimento tangibile e misurabile.</p>
             <ul>
-                [cite_start]<li><strong>Efficienza Operativa 24/7:</strong> Il sistema garantisce un controllo adattivo e instancabile dell'ambiente per l'intera durata di un'esposizione, operando 24/7 senza incorrere in costi variabili o nella necessità di supervisione costante. [cite: 28] [cite_start]Questo permette di valorizzare il ruolo del personale qualificato, spostando il focus dalla ripetitiva esecuzione manuale alla progettazione strategica e creativa dell'esperienza iniziale. [cite: 29]</li>
-                [cite_start]<li><strong>Autonomia e Affidabilità:</strong> Una volta programmata la logica artistica, MOOD agisce in completa autonomia, assicurando un'esperienza dinamica e coerente per ogni visitatore, indipendentemente dall'orario o dall'affluenza. [cite: 30] [cite_start]È una soluzione robusta per musei, gallerie e installazioni permanenti. [cite: 31]</li>
-                [cite_start]<li><strong>Ottimizzazione dell'Infrastruttura Esistente:</strong> MOOD si integra con le attrezzature hardware e le licenze software già in uso, valorizzando gli investimenti tecnologici pregressi. [cite: 32] [cite_start]Il sistema opera su hardware compatto e performante (come Raspberry Pi 4 o NVIDIA Jetson) per l'elaborazione locale dei dati dei sensori, garantendo reattività e sicurezza. [cite: 33]</li>
+                <li><strong>Efficienza Operativa 24/7:</strong> Il sistema garantisce un controllo adattivo e instancabile dell'ambiente per l'intera durata di un'esposizione, operando 24/7 senza incorrere in costi variabili o nella necessità di supervisione costante. Questo permette di valorizzare il ruolo del personale qualificato, spostando il focus dalla ripetitiva esecuzione manuale alla progettazione strategica e creativa dell'esperienza iniziale.</li>
+                <li><strong>Autonomia e Affidabilità:</strong> Una volta programmata la logica artistica, MOOD agisce in completa autonomia, assicurando un'esperienza dinamica e coerente per ogni visitatore, indipendentemente dall'orario o dall'affluenza. È una soluzione robusta per musei, gallerie e installazioni permanenti.</li>
+                <li><strong>Ottimizzazione dell'Infrastruttura Esistente:</strong> MOOD si integra con le attrezzature hardware e le licenze software già in uso, valorizzando gli investimenti tecnologici pregressi. Il sistema opera su hardware compatto e performante (come Raspberry Pi 4 o NVIDIA Jetson) per l'elaborazione locale dei dati dei sensori, garantendo reattività e sicurezza.</li>
             </ul>
 
-            [cite_start]<h2>Innovazione e Posizionamento sul Mercato [cite: 34]</h2>
-            [cite_start]<p>MOOD rappresenta una nuova categoria di soluzioni per la gestione di spazi esperienziali, colmando un vuoto nel mercato attuale. [cite: 35] [cite_start]A differenza di sistemi hardware rigidi e costosi o di software verticali limitati a un singolo compito, MOOD offre una <strong>piattaforma di controllo olistica e intelligente</strong>. [cite: 36] [cite_start]Investire in MOOD significa dotarsi di una piattaforma per il futuro, un partner tecnologico e creativo in grado di garantire che ogni visitatore viva un'esperienza unica e memorabile. [cite: 37]</p>
+            <h2>Innovazione e Posizionamento sul Mercato</h2>
+            <p>MOOD rappresenta una nuova categoria di soluzioni per la gestione di spazi esperienziali, colmando un vuoto nel mercato attuale. A differenza di sistemi hardware rigidi e costosi o di software verticali limitati a un singolo compito, MOOD offre una <strong>piattaforma di controllo olistica e intelligente</strong>. Investire in MOOD significa dotarsi di una piattaforma per il futuro, un partner tecnologico e creativo in grado di garantire che ogni visitatore viva un'esperienza unica e memorabile.</p>
             
-            [cite_start]<p class="tagline">MOOD: Art that Reacts. [cite: 38]</p>
+            <p class="tagline">MOOD: Art that Reacts.</p>
         </div>
 
         <div id="content-en" class="hidden">
-            [cite_start]<h1>MOOD: Adaptive Control System for Experiential Environments [cite: 40]</h1>
+            <a href="en.html" class="back-link">← Back to Home</a>
+            <h1>MOOD: Adaptive Control System for Experiential Environments</h1>
             <p>
-                [cite_start]MOOD is a centralized control system that integrates artificial intelligence for environmental analysis with standard entertainment industry software, designed to automate and optimize the direction of interactive installations and immersive spaces. [cite: 41] [cite_start]The system offers an advanced solution to overcome the static nature of traditional staging, enabling the creation of environments that dynamically change based on real, measurable conditions. [cite: 42]
+                MOOD is a centralized control system that integrates artificial intelligence for environmental analysis with standard entertainment industry software, designed to automate and optimize the direction of interactive installations and immersive spaces. The system offers an advanced solution to overcome the static nature of traditional staging, enabling the creation of environments that dynamically change based on real, measurable conditions.
             </p>
             
-            [cite_start]<h2>Functional Architecture of the System [cite: 43]</h2>
-            [cite_start]<p>MOOD operates through three main integrated modules: [cite: 44]</p>
+            <h2>Functional Architecture of the System</h2>
+            <p>MOOD operates through three main integrated modules:</p>
             
-            <h3>1. [cite_start]Environmental Analysis Engine (AI-Powered) [cite: 45]</h3>
+            <h3>1. Environmental Analysis Engine (AI-Powered)</h3>
             <ul>
-                [cite_start]<li><strong>Computer Vision:</strong> Through cameras, the engine performs real-time audience analysis, quantifying aggregate parameters such as crowd density, people count, and kinetic energy (motion) level. [cite: 46] [cite_start]The system is designed to ensure privacy, analyzing data anonymously to perceive the general atmosphere without identifying individuals. [cite: 47]</li>
-                [cite_start]<li><strong>Audio Analysis:</strong> Using ambient microphones, the system analyzes the soundscape to classify it. [cite: 48] [cite_start]It distinguishes between silence, background buzz, conversations and music, measuring metrics such as volume (dB) and spectral energy to enrich AI decision context. [cite: 49]</li>
+                <li><strong>Computer Vision:</strong> Through cameras, the engine performs real-time audience analysis, quantifying aggregate parameters such as crowd density, people count, and kinetic energy (motion) level. The system is designed to ensure privacy, analyzing data anonymously to perceive the general atmosphere without identifying individuals.</li>
+                <li><strong>Audio Analysis:</strong> Using ambient microphones, the system analyzes the soundscape to classify it. It distinguishes between silence, background buzz, conversations and music, measuring metrics such as volume (dB) and spectral energy to enrich AI decision context.</li>
             </ul>
 
-            <h3>2. [cite_start]Centralized Control and Native Integration [cite: 50]</h3>
-            [cite_start]<p>MOOD acts as an <strong>orchestra conductor</strong>, interfacing fluently with industry-standard professional software. [cite: 51] [cite_start]The current implementation includes native control of: [cite: 52]</p>
+            <h3>2. Centralized Control and Native Integration</h3>
+            <p>MOOD acts as an <strong>orchestra conductor</strong>, interfacing fluently with industry-standard professional software. The current implementation includes native control of:</p>
             <ul>
-                [cite_start]<li><code>QLab</code>: Advanced audio/video cue management, dynamic volume adjustment and playback. [cite: 53]</li>
-                [cite_start]<li><code>Resolume Arena</code>: Real-time manipulation of visual effects, layer opacity and clip synchronization. [cite: 54]</li>
-                [cite_start]<li><code>Light Console (via OSC/ArtNet)</code>: Compatibility with platforms such as Chamsys MagicQ and GrandMA3 for control of scenes, intensity and color parameters. [cite: 55]</li>
+                <li><code>QLab</code>: Advanced audio/video cue management, dynamic volume adjustment and playback.</li>
+                <li><code>Resolume Arena</code>: Real-time manipulation of visual effects, layer opacity and clip synchronization.</li>
+                <li><code>Light Console (via OSC/ArtNet)</code>: Compatibility with platforms such as Chamsys MagicQ and GrandMA3 for control of scenes, intensity and color parameters.</li>
             </ul>
-            [cite_start]<p>The system architecture is <strong>inherently modular and scalable</strong>. [cite: 56] [cite_start]Integration of additional software (e.g., TouchDesigner, Ableton Live) or communication protocols (MIDI, DMX) is native, ensuring longevity and adaptability of the investment. [cite: 57]</p>
+            <p>The system architecture is <strong>inherently modular and scalable</strong>. Integration of additional software (e.g., TouchDesigner, Ableton Live) or communication protocols (MIDI, DMX) is native, ensuring longevity and adaptability of the investment.</p>
             
-            <h3>3. [cite_start]Art Direction Interface (Mood Designer) [cite: 58]</h3>
-            [cite_start]<p>The system has a control interface that allows art directors and technicians to program the behavior of the installation using conditional logic (IF-THEN). [cite: 59] [cite_start]Examples of implementable rules: [cite: 60]</p>
+            <h3>3. Art Direction Interface (Mood Designer)</h3>
+            <p>The system has a control interface that allows art directors and technicians to program the behavior of the installation using conditional logic (IF-THEN). Examples of implementable rules:</p>
             <ul>
-                [cite_start]<li><strong>Scenario 1 (High Energy):</strong> <code>IF</code> the number of people exceeds 20 <code>AND</code> the aggregate movement level is above 70%, <code>THEN</code> the system activates the "Energetic" mood. [cite: 61]</li>
-                [cite_start]<li><strong>Scenario 2 (Calm Atmosphere):</strong> <code>IF</code> the ambient volume is less than 40dB <code>AND</code> movement is almost absent, <code>THEN</code> the system activates the "Contemplative" mood to encourage reflection. [cite: 62]</li>
+                <li><strong>Scenario 1 (High Energy):</strong> <code>IF</code> the number of people exceeds 20 <code>AND</code> the aggregate movement level is above 70%, <code>THEN</code> the system activates the "Energetic" mood.</li>
+                <li><strong>Scenario 2 (Calm Atmosphere):</strong> <code>IF</code> the ambient volume is less than 40dB <code>AND</code> movement is almost absent, <code>THEN</code> the system activates the "Contemplative" mood to encourage reflection.</li>
             </ul>
-            [cite_start]<p><strong>Automatic Learning:</strong> The AI is not limited to deterministic rule execution, but is equipped with a learning module. [cite: 63] [cite_start]It analyzes correlations between activated configurations (lights, sounds, video) and audience engagement metrics over time, autonomously optimizing its decisions to maximize the impact of the experience. [cite: 64]</p>
+            <p><strong>Automatic Learning:</strong> The AI is not limited to deterministic rule execution, but is equipped with a learning module. It analyzes correlations between activated configurations (lights, sounds, video) and audience engagement metrics over time, autonomously optimizing its decisions to maximize the impact of the experience.</p>
 
-            [cite_start]<h2>Strategic and Operational Benefits [cite: 65]</h2>
-            [cite_start]<p>MOOD is engineered to deliver a tangible and measurable return on investment. [cite: 66]</p>
+            <h2>Strategic and Operational Benefits</h2>
+            <p>MOOD is engineered to deliver a tangible and measurable return on investment.</p>
             <ul>
-                [cite_start]<li><strong>24/7 Operational Efficiency:</strong> The system provides adaptive and tireless control of the environment throughout the duration of an exhibit, operating 24/7 without incurring variable costs or the need for constant supervision. [cite: 67] [cite_start]This enhances the role of skilled staff, shifting the focus from repetitive manual execution to the strategic and creative design of the initial experience. [cite: 68]</li>
-                [cite_start]<li><strong>Autonomy and Reliability:</strong> Once the artistic logic is programmed, MOOD acts with complete autonomy, ensuring a dynamic and consistent experience for every visitor, regardless of time of day or attendance. [cite: 69] [cite_start]It is a robust solution for museums, galleries and permanent installations. [cite: 70]</li>
-                [cite_start]<li><strong>Optimization of Existing Infrastructure:</strong> MOOD integrates with existing hardware equipment and software licenses, enhancing the value of prior technology investments. [cite: 71] [cite_start]The system operates on compact, high-performance hardware (such as Raspberry Pi 4 or NVIDIA Jetson) for local processing of sensor data, ensuring responsiveness and security. [cite: 72]</li>
+                <li><strong>24/7 Operational Efficiency:</strong> The system provides adaptive and tireless control of the environment throughout the duration of an exhibit, operating 24/7 without incurring variable costs or the need for constant supervision. This enhances the role of skilled staff, shifting the focus from repetitive manual execution to the strategic and creative design of the initial experience.</li>
+                <li><strong>Autonomy and Reliability:</strong> Once the artistic logic is programmed, MOOD acts with complete autonomy, ensuring a dynamic and consistent experience for every visitor, regardless of time of day or attendance. It is a robust solution for museums, galleries and permanent installations.</li>
+                <li><strong>Optimization of Existing Infrastructure:</strong> MOOD integrates with existing hardware equipment and software licenses, enhancing the value of prior technology investments. The system operates on compact, high-performance hardware (such as Raspberry Pi 4 or NVIDIA Jetson) for local processing of sensor data, ensuring responsiveness and security.</li>
             </ul>
 
-            [cite_start]<h2>Innovation and Market Positioning [cite: 73]</h2>
-            [cite_start]<p>MOOD represents a new category of solutions for managing experiential spaces, filling a gap in the current market. [cite: 74] [cite_start]Unlike rigid and expensive hardware systems or vertical software limited to a single task, MOOD offers a <strong>holistic and intelligent control platform</strong>. [cite: 75] [cite_start]Investing in MOOD means equipping yourself with a platform for the future, a technology and creative partner that can ensure that every visitor has a unique and memorable experience. [cite: 76]</p>
+            <h2>Innovation and Market Positioning</h2>
+            <p>MOOD represents a new category of solutions for managing experiential spaces, filling a gap in the current market. Unlike rigid and expensive hardware systems or vertical software limited to a single task, MOOD offers a <strong>holistic and intelligent control platform</strong>. Investing in MOOD means equipping yourself with a platform for the future, a technology and creative partner that can ensure that every visitor has a unique and memorable experience.</p>
 
-            [cite_start]<p class="tagline">MOOD: Art that Reacts. [cite: 77]</p>
+            <p class="tagline">MOOD: Art that Reacts.</p>
         </div>
     </div>
 
