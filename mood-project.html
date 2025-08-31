@@ -138,21 +138,30 @@
             font-weight: bold;
             color: #c084fc; /* Viola */
         }
-        /* Stili per lo Slideshow */
-        .slideshow-container {
-            position: relative;
-            max-width: 100%;
+        /* Nuovi stili per le immagini del progetto */
+        .project-images {
+            display: flex;
+            flex-wrap: wrap; /* Permette alle immagini di andare a capo */
+            gap: 16px; /* Spazio tra le immagini */
+            justify-content: center; /* Centra le immagini orizzontalmente */
             margin: 2em auto;
-            border-radius: 16px;
-            overflow: hidden;
+        }
+        .project-images img {
+            width: 100%; /* Larghezza massima per dispositivi piccoli */
+            max-width: 400px; /* Larghezza massima per desktop (media) */
+            height: auto;
+            border-radius: 8px;
             border: 1px solid rgba(192, 132, 252, 0.3);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            object-fit: contain; /* Assicura che l'intera immagine sia visibile */
         }
-        .slide {
-            display: none;
-            width: 100%;
-        }
-        .slide.active {
-            display: block;
+
+        /* Stili responsive per affiancare 2 immagini su desktop */
+        @media (min-width: 768px) {
+            .project-images img {
+                width: calc(50% - 8px); /* Due immagini per riga con gap */
+                max-width: none; /* Rimuove il max-width per consentire 50% */
+            }
         }
     </style>
 </head>
@@ -171,11 +180,11 @@
                 MOOD è un sistema di controllo centralizzato che integra un'intelligenza artificiale per l'analisi ambientale con i software standard del settore dello spettacolo, progettato per automatizzare e ottimizzare la regia di installazioni interattive e spazi coinvolgenti. Il sistema offre una soluzione avanzata per superare la natura statica degli allestimenti tradizionali, abilitando la creazione di ambienti che si modificano dinamicamente in base a condizioni reali e misurabili.
             </p>
 
-            <div class="slideshow-container">
-                <img class="slide active" src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_arena.jpg" alt="Controllo di Resolume Arena via OSC">
-                <img class="slide" src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_qlab.png" alt="Controllo di QLab via OSC">
-                <img class="slide" src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_reaper.png" alt="Controllo di Reaper via OSC">
-                <img class="slide" src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_touchdesigner.png" alt="Controllo di TouchDesigner via OSC">
+            <div class="project-images">
+                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_arena.jpg" alt="Controllo di Resolume Arena via OSC">
+                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_qlab.png" alt="Controllo di QLab via OSC">
+                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_reaper.png" alt="Controllo di Reaper via OSC">
+                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_touchdesigner.png" alt="Controllo di TouchDesigner via OSC">
             </div>
 
             <h2>Architettura Funzionale del Sistema</h2>
@@ -225,11 +234,11 @@
                 MOOD is a centralized control system that integrates artificial intelligence for environmental analysis with standard entertainment industry software, designed to automate and optimize the direction of interactive installations and immersive spaces. The system offers an advanced solution to overcome the static nature of traditional staging, enabling the creation of environments that dynamically change based on real, measurable conditions.
             </p>
 
-            <div class="slideshow-container">
-                <img class="slide active" src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_arena.jpg" alt="Controlling Resolume Arena via OSC">
-                <img class="slide" src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_qlab.png" alt="Controlling QLab via OSC">
-                <img class="slide" src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_reaper.png" alt="Controlling Reaper via OSC">
-                <img class="slide" src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_touchdesigner.png" alt="Controlling TouchDesigner via OSC">
+            <div class="project-images">
+                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_arena.jpg" alt="Controlling Resolume Arena via OSC">
+                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_qlab.png" alt="Controlling QLab via OSC">
+                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_reaper.png" alt="Controlling Reaper via OSC">
+                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_touchdesigner.png" alt="Controlling TouchDesigner via OSC">
             </div>
             
             <h2>Functional Architecture of the System</h2>
@@ -248,7 +257,7 @@
                 <li><code>Resolume Arena</code>: Real-time manipulation of visual effects, layer opacity and clip synchronization.</li>
                 <li><code>Light Console (via OSC/ArtNet)</code>: Compatibility with platforms such as Chamsys MagicQ and GrandMA3 for control of scenes, intensity and color parameters.</li>
             </ul>
-            <p>The system architecture is <strong>inherently modular and scalable</strong>. Integration of additional software (e.g., TouchDesigner, Ableton Live) or communication protocols (MIDI, DMX) is native, ensuring longevity and adaptability of the investment.</p>
+            <p>The system architecture is <strong>intrinsecamente modular and scalabile</strong>. Integration of additional software (e.g., TouchDesigner, Ableton Live) or communication protocols (MIDI, DMX) is native, ensuring longevity and adaptability of the investment.</p>
             
             <h3>3. Art Direction Interface (Mood Designer)</h3>
             <p>The system has a control interface that allows art directors and technicians to program the behavior of the installation using conditional logic (IF-THEN). Examples of implementable rules:</p>
@@ -293,26 +302,6 @@
                 btnEn.classList.add('active');
                 btnIt.classList.remove('active');
             });
-
-            // Logica per lo Slideshow
-            const slides = document.querySelectorAll('.slide');
-            let currentSlide = 0;
-
-            function showSlide(index) {
-                slides.forEach((slide, i) => {
-                    slide.classList.remove('active');
-                    if (i === index) {
-                        slide.classList.add('active');
-                    }
-                });
-            }
-
-            function nextSlide() {
-                currentSlide = (currentSlide + 1) % slides.length;
-                showSlide(currentSlide);
-            }
-
-            setInterval(nextSlide, 5000); // Cambia immagine ogni 5 secondi (5000ms)
         });
     </script>
 </body>
