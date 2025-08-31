@@ -17,7 +17,7 @@
   "author": {
     "@type": "Person",
     "name": "Antonio Mainenti",
-    "url": "https://aiforlive.com"
+    "url": "httpsaiforlive.com"
   },
   "keywords": "AI, Interactive Art, OSC, ArtNet, Computer Vision, QLab, Resolume, grandMA, Creative Technology"
 }
@@ -51,7 +51,7 @@
             font-weight: 700;
         }
         h1 {
-            font-size: 3.2em; /* >> AUMENTATA DIMENSIONE FONT << */
+            font-size: 3.2em;
             text-align: center;
             margin-bottom: 0.5em;
             margin-top: 0.5em;
@@ -61,7 +61,7 @@
             font-size: 2em;
             border-bottom: 2px solid #60a5fa; /* Blu del gradiente */
             padding-bottom: 10px;
-            margin-top: 2.5em; /* >> AGGIUNTO SPAZIO SUPERIORE << */
+            margin-top: 2.5em;
         }
         h3 {
             font-size: 1.5em;
@@ -138,6 +138,22 @@
             font-weight: bold;
             color: #c084fc; /* Viola */
         }
+        /* Stili per lo Slideshow */
+        .slideshow-container {
+            position: relative;
+            max-width: 100%;
+            margin: 2em auto;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid rgba(192, 132, 252, 0.3);
+        }
+        .slide {
+            display: none;
+            width: 100%;
+        }
+        .slide.active {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -154,6 +170,13 @@
             <p>
                 MOOD è un sistema di controllo centralizzato che integra un'intelligenza artificiale per l'analisi ambientale con i software standard del settore dello spettacolo, progettato per automatizzare e ottimizzare la regia di installazioni interattive e spazi coinvolgenti. Il sistema offre una soluzione avanzata per superare la natura statica degli allestimenti tradizionali, abilitando la creazione di ambienti che si modificano dinamicamente in base a condizioni reali e misurabili.
             </p>
+
+            <div class="slideshow-container">
+                <img class="slide active" src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/demo-maxxi.gif" alt="Dimostrazione MOOD al MAXXI">
+                <img class="slide" src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/demo-rai.gif" alt="Dimostrazione MOOD per archivi RAI">
+                <img class="slide" src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/demo_api.gif" alt="Dimostrazione API di MOOD">
+                <img class="slide" src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/demo_produzione.gif" alt="Dimostrazione MOOD in produzione">
+            </div>
 
             <h2>Architettura Funzionale del Sistema</h2>
             <p>MOOD opera attraverso tre moduli principali integrati:</p>
@@ -201,6 +224,13 @@
             <p>
                 MOOD is a centralized control system that integrates artificial intelligence for environmental analysis with standard entertainment industry software, designed to automate and optimize the direction of interactive installations and immersive spaces. The system offers an advanced solution to overcome the static nature of traditional staging, enabling the creation of environments that dynamically change based on real, measurable conditions.
             </p>
+
+            <div class="slideshow-container">
+                <img class="slide active" src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/demo-maxxi.gif" alt="MOOD Demonstration at MAXXI">
+                <img class="slide" src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/demo-rai.gif" alt="MOOD Demonstration for RAI archives">
+                <img class="slide" src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/demo_api.gif" alt="MOOD API Demonstration">
+                <img class="slide" src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/demo_produzione.gif" alt="MOOD in production Demonstration">
+            </div>
             
             <h2>Functional Architecture of the System</h2>
             <p>MOOD operates through three main integrated modules:</p>
@@ -263,6 +293,26 @@
                 btnEn.classList.add('active');
                 btnIt.classList.remove('active');
             });
+
+            // Logica per lo Slideshow
+            const slides = document.querySelectorAll('.slide');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === index) {
+                        slide.classList.add('active');
+                    }
+                });
+            }
+
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slides.length;
+                showSlide(currentSlide);
+            }
+
+            setInterval(nextSlide, 5000); // Cambia immagine ogni 5 secondi (5000ms)
         });
     </script>
 </body>
