@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,10 +26,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
+        :root { color-scheme: dark; }
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.7;
             background-color: #0f172a;
+            background-image: radial-gradient(circle at 1px 1px, rgba(148,163,184,0.06) 1px, transparent 0);
+            background-size: 22px 22px;
+            background-attachment: fixed;
             color: #d1d5db;
             margin: 0;
             padding: 0;
@@ -40,7 +44,7 @@
             padding: 20px;
             background-color: rgba(30, 41, 59, 0.5);
             border-radius: 16px;
-            border: 1px solid rgba(192, 132, 252, 0.3);
+            border: 1px solid rgba(45, 212, 191, 0.3);
         }
         h1, h2, h3 {
             color: #ffffff;
@@ -61,7 +65,21 @@
         h3 {
             font-size: 1.5em;
             margin-top: 1.5em;
-            color: #a78bfa;
+            color: #2dd4bf;
+        }
+        .brand-gradient-text {
+            background-image: linear-gradient(to right, #22d3ee, #34d399);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% 200%;
+            animation: gradientShift 18s ease infinite;
+            will-change: background-position;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         p, li {
             font-size: 1.1em;
@@ -76,7 +94,7 @@
             margin-bottom: 0.5em;
         }
         strong {
-            color: #c084fc;
+            color: #34d399;
         }
         .table-container {
             overflow-x: auto;
@@ -129,25 +147,35 @@
             font-size: 1.1em;
         }
         .contact-info a {
-            color: #93c5fd;
+            color: #2dd4bf; /* teal-400 */
             text-decoration: none;
         }
         .contact-info a:hover {
+            color: #34d399; /* green-400 from brand gradient */
             text-decoration: underline;
         }
+    a:focus-visible, button:focus-visible { outline: 2px solid #2dd4bf; outline-offset: 2px; }
+        .skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { left: 10px; top: 10px; width: auto; height: auto; padding: 8px 12px; background: #1f2937; color: #fff; border-radius: 8px; z-index: 50; outline: 2px solid #2dd4bf; }
+        @media (prefers-reduced-motion: reduce) { .brand-gradient-text { animation: none; } }
     </style>
 </head>
 <body>
 
+    <a href="#content" class="skip-link">Skip to main content</a>
+
+    <main id="content">
+
     <div class="container">
         <div class="language-switcher">
-            <button id="btn-it" class="lang-button">Italiano</button>
-            <button id="btn-en" class="lang-button active">English</button>
+            <button id="btn-it" class="lang-button" aria-pressed="false">Italiano</button>
+            <button id="btn-en" class="lang-button active" aria-pressed="true">English</button>
         </div>
 
         <div id="content-it" class="hidden">
             <a href="it.html" class="back-link">← Torna alla Home</a>
-            <h1>Valorizzazione degli Archivi Sonori tramite Intelligenza Artificiale</h1>
+            <h1 class="brand-gradient-text" tabindex="-1">Valorizzazione degli Archivi Sonori tramite Intelligenza Artificiale</h1>
+            <div class="h-px w-full bg-gradient-to-r from-teal-400/30 via-cyan-400/30 to-teal-400/30 mb-8"></div>
             <p>
                 Nel settore culturale, l'archivio sonoro rappresenta una risorsa di inestimabile valore storico e artistico. La gestione di questi archivi, tuttavia, comporta sfide significative: la catalogazione di grandi volumi di materiale non indicizzato, il rischio di degrado dei supporti fisici e gli alti costi associati al lavoro manuale ne limitano l'accessibilità e la piena valorizzazione.
             </p>
@@ -238,7 +266,8 @@
 
         <div id="content-en">
             <a href="en.html" class="back-link">← Back to Home</a>
-            <h1>Enhancement of Sound Archives through Artificial Intelligence</h1>
+            <h1 class="brand-gradient-text" tabindex="-1">Enhancement of Sound Archives through Artificial Intelligence</h1>
+            <div class="h-px w-full bg-gradient-to-r from-teal-400/30 via-cyan-400/30 to-teal-400/30 mb-8"></div>
             <p>
                 In the cultural sector, sound archives represent a resource of inestimable historical and artistic value. The management of these archives, however, entails significant challenges: the cataloging of large volumes of unindexed material, the risk of degradation of physical media, and the high costs associated with manual labor limit their accessibility and full valorization.
             </p>
@@ -328,8 +357,10 @@
         </div>
     </div>
 
+    </main>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function() {
             const btnIt = document.getElementById('btn-it');
             const btnEn = document.getElementById('btn-en');
             const contentIt = document.getElementById('content-it');
@@ -340,6 +371,8 @@
                 contentEn.classList.add('hidden');
                 btnIt.classList.add('active');
                 btnEn.classList.remove('active');
+        btnIt.setAttribute('aria-pressed','true');
+        btnEn.setAttribute('aria-pressed','false');
             });
 
             btnEn.addEventListener('click', function() {
@@ -347,6 +380,8 @@
                 contentIt.classList.add('hidden');
                 btnEn.classList.add('active');
                 btnIt.classList.remove('active');
+        btnEn.setAttribute('aria-pressed','true');
+        btnIt.setAttribute('aria-pressed','false');
             });
         });
     </script>

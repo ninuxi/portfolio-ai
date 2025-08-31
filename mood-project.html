@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,14 +27,34 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
+        :root { color-scheme: dark; }
         /* Stili Generali con Tema Scuro */
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.7;
             background-color: #0f172a; /* bg-slate-900 */
+            /* Pattern di sfondo coerente con le altre pagine */
+            background-image: radial-gradient(circle at 1px 1px, rgba(148,163,184,0.06) 1px, transparent 0);
+            background-size: 22px 22px;
+            background-attachment: fixed;
             color: #d1d5db; /* text-gray-300 */
             margin: 0;
             padding: 0;
+        }
+        /* Testo con gradiente brand */
+        .brand-gradient-text {
+            background-image: linear-gradient(to right, #22d3ee, #34d399);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            background-size: 200% 200%;
+            animation: gradientShift 18s ease infinite;
+            will-change: background-position;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         /* Contenitore Principale */
         .container {
@@ -43,7 +63,7 @@
             padding: 20px;
             background-color: rgba(30, 41, 59, 0.5); /* bg-slate-800/50 */
             border-radius: 16px; /* rounded-2xl */
-            border: 1px solid rgba(192, 132, 252, 0.3); /* border-purple-500/30 */
+            border: 1px solid rgba(45, 212, 191, 0.3); /* border-teal-400/30 */
         }
         /* Tipografia */
         h1, h2, h3 {
@@ -76,7 +96,7 @@
             padding-left: 20px;
         }
         strong {
-            color: #c084fc; /* Viola del gradiente */
+            color: #34d399; /* Verde del gradiente brand */
         }
         code {
             background-color: rgba(30, 41, 59, 1); /* bg-slate-800 */
@@ -126,6 +146,15 @@
         .back-link:hover {
             color: #ffffff;
         }
+        /* Focus accessibile */
+    a:focus-visible, button:focus-visible { outline: 2px solid #2dd4bf; outline-offset: 2px; }
+        /* Skip link accessibile */
+        .skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { left: 10px; top: 10px; width: auto; height: auto; padding: 8px 12px; background: #1f2937; color: #fff; border-radius: 8px; z-index: 50; outline: 2px solid #2dd4bf; }
+        /* Riduzione movimento */
+        @media (prefers-reduced-motion: reduce) {
+            .brand-gradient-text { animation: none; }
+        }
         /* Utilità */
         .hidden {
             display: none;
@@ -136,7 +165,7 @@
             margin-top: 50px;
             font-size: 1.4em;
             font-weight: bold;
-            color: #c084fc; /* Viola */
+            color: #22d3ee; /* Ciano brand */
         }
         /* Nuovi stili per le immagini del progetto */
         .project-images {
@@ -151,7 +180,7 @@
             max-width: 400px; /* Larghezza massima per desktop (media) */
             height: auto;
             border-radius: 8px;
-            border: 1px solid rgba(192, 132, 252, 0.3);
+            border: 1px solid rgba(45, 212, 191, 0.3);
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             object-fit: contain; /* Assicura che l'intera immagine sia visibile */
         }
@@ -167,24 +196,29 @@
 </head>
 <body>
 
+    <a href="#content" class="skip-link">Salta al contenuto principale</a>
+
+    <main id="content">
+
     <div class="container">
         <div class="language-switcher">
-            <button id="btn-it" class="lang-button active">Italiano</button>
-            <button id="btn-en" class="lang-button">English</button>
+            <button id="btn-it" class="lang-button active" aria-pressed="true">Italiano</button>
+            <button id="btn-en" class="lang-button" aria-pressed="false">English</button>
         </div>
 
         <div id="content-it">
             <a href="it.html" class="back-link">← Torna alla Home</a>
-            <h1>MOOD: Sistema di Controllo Adattivo per Ambienti Esperienziali</h1>
+            <h1 class="brand-gradient-text" tabindex="-1">MOOD: Sistema di Controllo Adattivo per Ambienti Esperienziali</h1>
+            <div class="h-px w-full bg-gradient-to-r from-teal-400/30 via-cyan-400/30 to-teal-400/30 mb-8"></div>
             <p>
                 MOOD è un sistema di controllo centralizzato che integra un'intelligenza artificiale per l'analisi ambientale con i software standard del settore dello spettacolo, progettato per automatizzare e ottimizzare la regia di installazioni interattive e spazi coinvolgenti. Il sistema offre una soluzione avanzata per superare la natura statica degli allestimenti tradizionali, abilitando la creazione di ambienti che si modificano dinamicamente in base a condizioni reali e misurabili.
             </p>
 
             <div class="project-images">
-                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_arena.jpg" alt="Controllo di Resolume Arena via OSC">
-                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_qlab.png" alt="Controllo di QLab via OSC">
-                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_reaper.png" alt="Controllo di Reaper via OSC">
-                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_touchdesigner.png" alt="Controllo di TouchDesigner via OSC">
+                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_arena.jpg" alt="Controllo di Resolume Arena via OSC" loading="lazy" decoding="async">
+                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_qlab.png" alt="Controllo di QLab via OSC" loading="lazy" decoding="async">
+                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_reaper.png" alt="Controllo di Reaper via OSC" loading="lazy" decoding="async">
+                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_touchdesigner.png" alt="Controllo di TouchDesigner via OSC" loading="lazy" decoding="async">
             </div>
 
             <h2>Architettura Funzionale del Sistema</h2>
@@ -229,16 +263,17 @@
 
         <div id="content-en" class="hidden">
             <a href="en.html" class="back-link">← Back to Home</a>
-            <h1>MOOD: Adaptive Control System for Experiential Environments</h1>
+            <h1 class="brand-gradient-text" tabindex="-1">MOOD: Adaptive Control System for Experiential Environments</h1>
+            <div class="h-px w-full bg-gradient-to-r from-teal-400/30 via-cyan-400/30 to-teal-400/30 mb-8"></div>
             <p>
                 MOOD is a centralized control system that integrates artificial intelligence for environmental analysis with standard entertainment industry software, designed to automate and optimize the direction of interactive installations and immersive spaces. The system offers an advanced solution to overcome the static nature of traditional staging, enabling the creation of environments that dynamically change based on real, measurable conditions.
             </p>
 
             <div class="project-images">
-                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_arena.jpg" alt="Controlling Resolume Arena via OSC">
-                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_qlab.png" alt="Controlling QLab via OSC">
-                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_reaper.png" alt="Controlling Reaper via OSC">
-                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_touchdesigner.png" alt="Controlling TouchDesigner via OSC">
+                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_arena.jpg" alt="Controlling Resolume Arena via OSC" loading="lazy" decoding="async">
+                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_qlab.png" alt="Controlling QLab via OSC" loading="lazy" decoding="async">
+                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_reaper.png" alt="Controlling Reaper via OSC" loading="lazy" decoding="async">
+                <img src="https://raw.githubusercontent.com/ninuxi/portfolio-ai/main/images/mood_osc_touchdesigner.png" alt="Controlling TouchDesigner via OSC" loading="lazy" decoding="async">
             </div>
             
             <h2>Functional Architecture of the System</h2>
@@ -282,6 +317,8 @@
         </div>
     </div>
 
+    </main>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const btnIt = document.getElementById('btn-it');
@@ -294,6 +331,8 @@
                 contentEn.classList.add('hidden');
                 btnIt.classList.add('active');
                 btnEn.classList.remove('active');
+                btnIt.setAttribute('aria-pressed','true');
+                btnEn.setAttribute('aria-pressed','false');
             });
 
             btnEn.addEventListener('click', function() {
@@ -301,6 +340,8 @@
                 contentIt.classList.add('hidden');
                 btnEn.classList.add('active');
                 btnIt.classList.remove('active');
+                btnEn.setAttribute('aria-pressed','true');
+                btnIt.setAttribute('aria-pressed','false');
             });
         });
     </script>

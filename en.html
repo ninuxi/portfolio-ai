@@ -16,6 +16,15 @@
     <meta name="twitter:title" content="AI For Live | Antonio Mainenti's Portfolio">
     <meta name="twitter:description" content="Portfolio of a Creative Technologist merging AI, audio, and interactive art.">
     <meta name="twitter:image" content="https://aiforlive.com/aiforlive-preview.png">
+    <link rel="canonical" href="https://aiforlive.com/en.html">
+    <link rel="alternate" hreflang="en" href="https://aiforlive.com/en.html">
+    <link rel="alternate" hreflang="it" href="https://aiforlive.com/it.html">
+    <meta name="theme-color" content="#0b1020">
+    <meta property="og:locale" content="en_US">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="manifest" href="/site.webmanifest">
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -37,28 +46,54 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     <style>
-    body { font-family: 'Inter', sans-serif; }
+    :root { color-scheme: dark; }
+    body {
+        font-family: 'Inter', sans-serif;
+        /* Subtle background pattern */
+        background-image: radial-gradient(circle at 1px 1px, rgba(148,163,184,0.06) 1px, transparent 0);
+        background-size: 22px 22px;
+        background-attachment: fixed;
+    }
     .brand-gradient-text {
-        background-image: linear-gradient(to right, #60a5fa, #c084fc); /* Gradiente Blu -> Viola */
+        background-image: linear-gradient(to right, #22d3ee, #34d399); /* Cyan -> Green */
         -webkit-background-clip: text;
         background-clip: text;
         color: transparent;
+        background-size: 200% 200%;
+        animation: gradientShift 18s ease infinite;
+        will-change: background-position;
     }
-    .gradient-text {
-        background-image: linear-gradient(to right, #a78bfa, #f472b6); /* Gradiente Viola -> Rosa */
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
+    .gradient-text { color: #ffffff; }
+    @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
     }
+    /* Global accessible focus for links and buttons */
+    a:focus-visible, button:focus-visible { outline: 2px solid #2dd4bf; outline-offset: 2px; }
+        /* Uniform CTA effects for rounded-lg */
+    a.rounded-lg, button.rounded-lg { transition: transform .2s ease, box-shadow .2s ease; }
+    a.rounded-lg:hover, button.rounded-lg:hover { transform: translateY(-1px); box-shadow: 0 10px 25px rgba(45,212,191,.15); }
+    a.rounded-lg:focus-visible, button.rounded-lg:focus-visible { box-shadow: 0 0 0 2px rgba(45,212,191,.6); outline: none; }
+        /* Skip link */
+        .skip-link { position: absolute; left: -999px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+    .skip-link:focus { left: 10px; top: 10px; width: auto; height: auto; padding: 8px 12px; background: #1f2937; color: #fff; border-radius: 8px; z-index: 50; outline: 2px solid #2dd4bf; }
+        @media (prefers-reduced-motion: reduce) {
+            .brand-gradient-text { animation: none; }
+            .transition-transform, .duration-200, .duration-300 { transition: none !important; }
+            a.rounded-lg:hover, button.rounded-lg:hover { transform: none; }
+        }
 </style>
 </head>
 <body class="bg-slate-900 text-gray-300">
 
+    <a href="#content" class="skip-link">Skip to main content</a>
+
     <div class="container mx-auto max-w-5xl px-4 py-16">
 
         <header class="text-center mb-24">
-            <img src="/cerchio.png" alt="AI For Live Logo" class="bg-slate-900 w-40 h-40 mx-auto mb-6 rounded-full shadow-2xl shadow-purple-900/50 border-2 border-purple-500/30">
-            <h1 class="text-5xl md:text-6xl font-black brand-gradient-text leading-tight">AI For Live</h1>
+            <img src="/cerchio.png" alt="AI For Live Logo" width="160" height="160" decoding="async" fetchpriority="high" class="bg-slate-900 w-40 h-40 mx-auto mb-6 rounded-full shadow-2xl shadow-teal-900/50 border-2 border-teal-500/30 transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/30 hover:ring-2 hover:ring-teal-500/20">
+            <h1 class="text-5xl md:text-6xl font-black brand-gradient-text leading-tight" tabindex="-1">AI For Live</h1>
             
             <div class="mt-8">
                 <h2 class="text-2xl md:text-3xl font-bold text-white leading-tight">
@@ -71,18 +106,21 @@
             </div>
 
             <div class="mt-8 flex justify-center flex-wrap items-center gap-x-6 gap-y-4">
-                <a href="https://github.com/ninuxi" target="_blank" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold px-5 py-2 rounded-lg transition-colors">GitHub</a>
-                <a href="https://mainenti.net" target="_blank" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold px-5 py-2 rounded-lg transition-colors">Website</a>
-                <a href="https://www.linkedin.com/in/mainenti/" target="_blank" class="bg-sky-600 hover:bg-sky-500 text-white font-semibold px-5 py-2 rounded-lg transition-colors">LinkedIn</a>
+                <a href="https://github.com/ninuxi" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold px-5 py-2 rounded-lg transition-colors">GitHub</a>
+                <a href="https://mainenti.net" target="_blank" rel="noopener noreferrer" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold px-5 py-2 rounded-lg transition-colors">Website</a>
+                <a href="https://www.linkedin.com/in/mainenti/" target="_blank" rel="noopener noreferrer" class="bg-teal-600 hover:bg-teal-500 text-white font-semibold px-5 py-2 rounded-lg transition-colors">LinkedIn</a>
                 <a href="/it.html" class="text-gray-400 hover:text-white text-sm font-semibold">Italiano</a>
             </div>
-        </header>
+    </header>
 
-        <main>
+    <!-- Gradient separator under hero -->
+    <div class="h-px w-full bg-gradient-to-r from-teal-400/30 via-cyan-400/30 to-teal-400/30 mb-16"></div>
+
+    <main id="content">
             <h2 class="text-4xl font-bold text-white text-center mb-12">Projects</h2>
-            <div class="space-y-10 mb-16">
+            <div class="grid gap-10 md:grid-cols-2 xl:grid-cols-3 mb-16">
                 
-                <div class="bg-slate-800/50 p-8 rounded-2xl border border-purple-500/30 shadow-2xl shadow-purple-900/20 flex flex-col">
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-teal-500/20 shadow-2xl shadow-teal-900/20 flex flex-col h-full transition-transform duration-200 hover:-translate-y-1 ring-1 ring-transparent hover:ring-teal-400/30 hover:shadow-teal-900/30 focus-within:ring-teal-400/40">
                     <h3 class="text-3xl font-bold text-white mb-3">MOOD: Adaptive Artistic Environment</h3>
                     <p class="mb-4 text-gray-400 flex-grow">
                         Our full-stack AI system analyzes the environment in real-time to direct complex artistic installations. MOOD transforms static spaces into dynamic experiences that react to the audience, integrating with leading industry software.
@@ -91,10 +129,10 @@
                          <div class="mb-4">
                             <h4 class="font-semibold text-white text-sm mb-2">Tech Stack:</h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-blue-500/20 text-blue-300 text-xs font-semibold px-3 py-1 rounded-full">Next.js</span>
-                                <span class="bg-sky-500/20 text-sky-300 text-xs font-semibold px-3 py-1 rounded-full">TypeScript</span>
-                                <span class="bg-green-500/20 text-green-300 text-xs font-semibold px-3 py-1 rounded-full">TensorFlow.js</span>
-                                <span class="bg-indigo-500/20 text-indigo-300 text-xs font-semibold px-3 py-1 rounded-full">OSC</span>
+                                <span class="bg-teal-500/20 text-teal-300 text-xs font-semibold px-3 py-1 rounded-full">Next.js</span>
+                                <span class="bg-teal-500/20 text-teal-300 text-xs font-semibold px-3 py-1 rounded-full">TypeScript</span>
+                                <span class="bg-teal-500/20 text-teal-300 text-xs font-semibold px-3 py-1 rounded-full">TensorFlow.js</span>
+                                <span class="bg-teal-500/20 text-teal-300 text-xs font-semibold px-3 py-1 rounded-full">OSC</span>
                             </div>
                         </div>
                         <div class="mb-6">
@@ -114,15 +152,15 @@
                             </div>
                         </div>
                         <div class="flex flex-wrap gap-4 mt-4">
-                            <a href="https://mood-adaptive-art-system.vercel.app/" target="_blank" class="bg-purple-600 hover:bg-purple-500 text-white font-semibold px-5 py-3 rounded-lg transition-transform hover:scale-105">Live Demo</a>
-                            <a href="https://github.com/ninuxi/mood-showcase" target="_blank" class="bg-white text-slate-900 font-semibold px-5 py-3 rounded-lg transition-transform hover:scale-105">Explore Code</a>
+                            <a href="https://mood-adaptive-art-system.vercel.app/" target="_blank" rel="noopener noreferrer" class="bg-teal-600 hover:bg-teal-500 text-white font-semibold px-5 py-3 rounded-lg transition-transform hover:scale-105">Live Demo</a>
+                            <a href="https://github.com/ninuxi/mood-showcase" target="_blank" rel="noopener noreferrer" class="bg-white text-slate-900 font-semibold px-5 py-3 rounded-lg transition-transform hover:scale-105">Explore Code</a>
                             <a href="mood-project.html" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold px-5 py-3 rounded-lg transition-transform hover:scale-105">Project Details →</a>
                         </div>
                         <p class="text-xs text-gray-500 mt-2">(Note: The full repository is private. This showcase illustrates key components.)</p>
                     </div>
                 </div>
                 
-                <div class="bg-slate-800/50 p-8 rounded-2xl border border-purple-500/30 shadow-2xl shadow-purple-900/20 flex flex-col">
+                <div class="bg-slate-800/50 p-8 rounded-2xl border border-teal-500/20 shadow-2xl shadow-teal-900/20 flex flex-col h-full transition-transform duration-200 hover:-translate-y-1 ring-1 ring-transparent hover:ring-teal-400/30 hover:shadow-teal-900/30 focus-within:ring-teal-400/40">
                     <h3 class="text-3xl font-bold text-white mb-3">Audio AI Projects</h3>
                     <p class="mb-4 text-gray-400 flex-grow">
                         A collection of libraries and models for reactive audio analysis and synthesis using deep learning, including sound event classification and texture generation.
@@ -131,9 +169,9 @@
                         <div class="mb-4">
                             <h4 class="font-semibold text-white text-sm mb-2">Tech Stack:</h4>
                             <div class="flex flex-wrap gap-2">
-                                <span class="bg-orange-500/20 text-orange-300 text-xs font-semibold px-3 py-1 rounded-full">Python</span>
-                                <span class="bg-red-500/20 text-red-300 text-xs font-semibold px-3 py-1 rounded-full">PyTorch</span>
-                                <span class="bg-yellow-500/20 text-yellow-300 text-xs font-semibold px-3 py-1 rounded-full">Librosa</span>
+                                <span class="bg-teal-500/20 text-teal-300 text-xs font-semibold px-3 py-1 rounded-full">Python</span>
+                                <span class="bg-teal-500/20 text-teal-300 text-xs font-semibold px-3 py-1 rounded-full">PyTorch</span>
+                                <span class="bg-teal-500/20 text-teal-300 text-xs font-semibold px-3 py-1 rounded-full">Librosa</span>
                                 <span class="bg-teal-500/20 text-teal-300 text-xs font-semibold px-3 py-1 rounded-full">Jupyter</span>
                             </div>
                         </div>
@@ -149,91 +187,91 @@
                             </div>
                         </div>
                         <div class="flex flex-wrap gap-4 mt-4">
-                           <a href="https://github.com/ninuxi/audio-ai-projects" target="_blank" class="bg-white text-slate-900 font-semibold px-5 py-3 rounded-lg transition-transform hover:scale-105">View Projects on GitHub</a>
+                           <a href="https://github.com/ninuxi/audio-ai-projects" target="_blank" rel="noopener noreferrer" class="bg-white text-slate-900 font-semibold px-5 py-3 rounded-lg transition-transform hover:scale-105">View Projects on GitHub</a>
                            <a href="audio-ai-projects-en.html" class="bg-gray-700 hover:bg-gray-600 text-white font-semibold px-5 py-3 rounded-lg transition-transform hover:scale-105">Project Details →</a>
                         </div>
                         <div class="mt-6">
                            <h5 class="font-semibold text-white text-sm mb-3">Live Demos:</h5>
-                           <div class="flex flex-wrap gap-3">
-                                <a href="https://huggingface.co/spaces/antoniiiii/audio-visualizer-demo" target="_blank" class="bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors">Demo 1: Visualizer</a>
-                                <button data-accordion-trigger="demo2" class="bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors flex items-center gap-2">Demo 2: Batch Processor <span class="arrow">▼</span></button>
-                                <a href="https://huggingface.co/spaces/antoniiiii/call-analytics" target="_blank" class="bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors">Demo 3: Call Analytics</a>
-                                <button data-accordion-trigger="demo4" class="bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors flex items-center gap-2">Demo 4: Lab Week <span class="arrow">▼</span></button>
-                                <button data-accordion-trigger="demo5" class="bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors flex items-center gap-2">Demo 5: Museum Audio AI <span class="arrow">▼</span></button>
-                                <button data-accordion-trigger="demo6" class="bg-purple-600 hover:bg-purple-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors flex items-center gap-2">Demo 6: Enterprise Systems <span class="arrow">▼</span></button>
+                      <div class="flex flex-wrap gap-3">
+                          <a href="https://huggingface.co/spaces/antoniiiii/audio-visualizer-demo" target="_blank" rel="noopener noreferrer" class="bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors">Demo 1: Visualizer</a>
+                          <button data-accordion-trigger="demo2" class="bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors flex items-center gap-2" aria-expanded="false" aria-controls="demo2-content">Demo 2: Batch Processor <span class="arrow">▼</span></button>
+                          <a href="https://huggingface.co/spaces/antoniiiii/call-analytics" target="_blank" rel="noopener noreferrer" class="bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors">Demo 3: Call Analytics</a>
+                          <button data-accordion-trigger="demo4" class="bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors flex items-center gap-2" aria-expanded="false" aria-controls="demo4-content">Demo 4: Lab Week <span class="arrow">▼</span></button>
+                          <button data-accordion-trigger="demo5" class="bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors flex items-center gap-2" aria-expanded="false" aria-controls="demo5-content">Demo 5: Museum Audio AI <span class="arrow">▼</span></button>
+                          <button data-accordion-trigger="demo6" class="bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors flex items-center gap-2" aria-expanded="false" aria-controls="demo6-content">Demo 6: Enterprise Systems <span class="arrow">▼</span></button>
                            </div>
                         </div>
-                        <div id="demo2-content" class="hidden mt-6 bg-slate-900/50 p-6 rounded-lg border border-gray-700">
-                             <h4 class="text-xl font-bold text-purple-400 mb-4">Batch Processor</h4>
+                    <div id="demo2-content" class="hidden mt-6 bg-slate-900/50 p-6 rounded-lg border border-gray-700">
+                        <h4 class="text-xl font-bold text-teal-400 mb-4">Batch Processor</h4>
                              <p class="text-sm text-gray-400 mt-1 mb-3 space-y-2">
                                 <span>Ideal for preparing machine learning datasets, this Python script automates repetitive tasks like resampling, volume normalization, silence trimming, and feature extraction (e.g., MFCCs, spectrograms).</span>
                                 <span>Users can define a custom processing chain via a configuration file, making the tool extremely flexible for optimizing data preparation workflows.</span>
                              </p>
-                             <img src="batch-processor.gif" alt="Demo of the Batch Processor in action" class="rounded-md border border-gray-600 mt-4">
+                             <img src="batch-processor.gif" alt="Demo of the Batch Processor in action" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-4">
                         </div>
-                        <div id="demo4-content" class="hidden mt-6 bg-slate-900/50 p-6 rounded-lg border border-gray-700">
-                             <h4 class="text-xl font-bold text-purple-400 mb-4">Demo Week 4</h4>
+                    <div id="demo4-content" class="hidden mt-6 bg-slate-900/50 p-6 rounded-lg border border-gray-700">
+                        <h4 class="text-xl font-bold text-teal-400 mb-4">Demo Week 4</h4>
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div class="bg-slate-800 p-4 rounded-lg flex flex-col">
                                     <h5 class="font-semibold text-white">RAI Archive Integration</h5>
                                     <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">
                                         Leveraging the tool's API, the script enriches content with metadata, segments audio to identify speech/music, and applies speech-to-text models for transcription.
                                     </p>
-                                    <img src="demo-rai.gif" alt="Terminal demo running the Rai Archive Tool" class="rounded-md border border-gray-600 mt-auto">
+                                    <img src="demo-rai.gif" alt="Terminal demo running the Rai Archive Tool" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
                                 </div>
                                 <div class="bg-slate-800 p-4 rounded-lg flex flex-col">
                                     <h5 class="font-semibold text-white">Audio Metadata Extraction</h5>
                                     <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">A script for automated analysis and extraction of technical and descriptive metadata from audio files, essential for cataloging large archives.</p>
-                                    <img src="test_metadata.gif" alt="Metadata extraction demo" class="rounded-md border border-gray-600 mt-auto">
+                                    <img src="test_metadata.gif" alt="Metadata extraction demo" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
                                 </div>
                                 <div class="bg-slate-800 p-4 rounded-lg flex flex-col">
                                     <h5 class="font-semibold text-white">Cultural Heritage Classifier</h5>
                                     <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">A deep learning model trained to classify audio-visual content related to cultural heritage (dialogues, period music, sounds).</p>
-                                    <img src="heritage_classifier.gif" alt="Cultural classifier demo" class="rounded-md border border-gray-600 mt-auto">
+                                    <img src="heritage_classifier.gif" alt="Cultural classifier demo" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
                                 </div>
                                 <div class="bg-slate-800 p-4 rounded-lg flex flex-col">
                                     <h5 class="font-semibold text-white">Cultural AI Platform</h5>
                                     <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">A simulation of a web platform that integrates the various tools, offering a single interface for the analysis and search of digital archives.</p>
-                                    <img src="cultural_ai_platform.gif" alt="AI platform demo" class="rounded-md border border-gray-600 mt-auto">
+                                    <img src="cultural_ai_platform.gif" alt="AI platform demo" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
                                 </div>
                             </div>
                         </div>
-                        <div id="demo5-content" class="hidden mt-6 bg-slate-900/50 p-6 rounded-lg border border-gray-700">
-                             <h4 class="text-xl font-bold text-purple-400 mb-4">Interactive Audio System for Museums</h4>
+                    <div id="demo5-content" class="hidden mt-6 bg-slate-900/50 p-6 rounded-lg border border-gray-700">
+                        <h4 class="text-xl font-bold text-teal-400 mb-4">Interactive Audio System for Museums</h4>
                              <div class="grid md:grid-cols-2 gap-6">
                                 <div class="bg-slate-800 p-4 rounded-lg">
                                     <h5 class="font-semibold text-white">Simulated Experience</h5>
                                     <p class="text-sm text-gray-400 mt-1 mb-3">
                                        This simulation shows an AI audio system applied to exhibition spaces like the MAXXI in Rome or the Triennale in Milan. Moving beyond the concept of a passive audioguide, the system tracks visitors and dynamically adapts the soundscape (music, narration) to create an engaging and personalized experience.
                                     </p>
-                                    <img src="demo-maxxi.gif" alt="Demo of the interactive system for MAXXI" class="rounded-md border border-gray-600 mt-4">
+                                    <img src="demo-maxxi.gif" alt="Demo of the interactive system for MAXXI" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-4">
                                 </div>
                                 <div class="bg-slate-800 p-4 rounded-lg">
                                      <h5 class="font-semibold text-white">AI Audio Processing</h5>
                                     <p class="text-sm text-gray-400 mt-1 mb-3">
                                        This demo on Hugging Face shows how the core API powers the system. Test the AI engine that selects audio content in real-time, demonstrating the backend's robustness and responsiveness.
                                     </p>
-                                    <a href="https://huggingface.co/spaces/antoniiiii/production-audio-api" target="_blank" class="bg-sky-600 hover:bg-sky-500 text-white font-semibold px-4 py-2 rounded-lg transition-colors inline-block mt-4">Test the API on Hugging Face</a>
+                                    <a href="https://huggingface.co/spaces/antoniiiii/production-audio-api" target="_blank" rel="noopener noreferrer" class="bg-sky-600 hover:bg-sky-500 text-white font-semibold px-4 py-2 rounded-lg transition-colors inline-block mt-4">Test the API on Hugging Face</a>
                                 </div>
                              </div>
                         </div>
-                        <div id="demo6-content" class="hidden mt-6 bg-slate-900/50 p-6 rounded-lg border border-gray-700">
-                             <h4 class="text-xl font-bold text-purple-400 mb-4">Production Systems & Cultural Analysis</h4>
+                    <div id="demo6-content" class="hidden mt-6 bg-slate-900/50 p-6 rounded-lg border border-gray-700">
+                        <h4 class="text-xl font-bold text-teal-400 mb-4">Production Systems & Cultural Analysis</h4>
                              <div class="grid md:grid-cols-3 gap-6">
                                 <div class="bg-slate-800 p-4 rounded-lg flex flex-col">
                                     <h5 class="font-semibold text-white">Enterprise Production Platform</h5>
                                     <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">This system analyzes entire folders of audio files in parallel. Every operation is tracked in a database to ensure reliability and scalability, making it a robust solution for large-scale archives.</p>
-                                    <img src="demo_produzione.gif" alt="Production platform demo" class="rounded-md border border-gray-600 mt-auto">
+                                    <img src="demo_produzione.gif" alt="Production platform demo" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
                                 </div>
                                 <div class="bg-slate-800 p-4 rounded-lg flex flex-col">
                                     <h5 class="font-semibold text-white">AI for Cultural Heritage</h5>
                                     <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">A specialized solution simulating a project for institutions like RAI Teche. The AI performs cultural analysis, detects degradation in historical tapes, and generates a business case for conservation.</p>
-                                    <img src="demo_heritage.gif" alt="Cultural heritage solution demo" class="rounded-md border border-gray-600 mt-auto">
+                                    <img src="demo_heritage.gif" alt="Cultural heritage solution demo" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
                                 </div>
                                 <div class="bg-slate-800 p-4 rounded-lg flex flex-col">
                                     <h5 class="font-semibold text-white">Open & Flexible API</h5>
                                     <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">This demo showcases our modern, documented API. The system is not a black box but integrates easily into existing workflows, ensuring rapid and low-cost adoption for any institution.</p>
-                                    <img src="demo_api.gif" alt="API demo" class="rounded-md border border-gray-600 mt-auto">
+                                    <img src="demo_api.gif" alt="API demo" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
                                 </div>
                              </div>
                         </div>
@@ -244,7 +282,7 @@
             
             <h3 class="text-2xl font-bold text-white text-center mb-8">Lab & Research</h3>
             <div class="grid md:grid-cols-3 gap-6">
-                <div class="bg-slate-800/50 p-6 rounded-xl border border-gray-700/50 flex flex-col">
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-gray-700/50 flex flex-col h-full shadow-2xl shadow-teal-900/10 transition-transform duration-200 hover:-translate-y-1 ring-1 ring-transparent hover:ring-teal-400/30 hover:shadow-teal-900/20 focus-within:ring-teal-400/40">
                     <h4 class="font-bold text-xl text-white">AI Audio-Vision Lab</h4>
                     <p class="text-sm text-gray-400 mt-2 flex-grow">Prototyping systems that correlate visual inputs with generative audio outputs to explore computational synesthesia.</p>
                     <div class="mt-auto pt-4">
@@ -253,10 +291,10 @@
                             <span class="bg-gray-600/50 text-gray-300 text-xs font-medium px-2 py-1 rounded-full">Generative Art</span>
                             <span class="bg-gray-600/50 text-gray-300 text-xs font-medium px-2 py-1 rounded-full">MediaPipe</span>
                         </div>
-                        <a href="https://github.com/ninuxi/ai-audio-vision-lab" target="_blank" class="text-purple-400 font-semibold">View Code &rarr;</a>
+                        <a href="https://github.com/ninuxi/ai-audio-vision-lab" target="_blank" rel="noopener noreferrer" class="text-teal-400 font-semibold">View Code &rarr;</a>
                     </div>
                 </div>
-                <div class="bg-slate-800/50 p-6 rounded-xl border border-gray-700/50 flex flex-col">
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-gray-700/50 flex flex-col h-full shadow-2xl shadow-teal-900/10 transition-transform duration-200 hover:-translate-y-1 ring-1 ring-transparent hover:ring-teal-400/30 hover:shadow-teal-900/20 focus-within:ring-teal-400/40">
                     <h4 class="font-bold text-xl text-white">Acoustic Space Analyzer AI</h4>
                     <p class="text-sm text-gray-400 mt-2 flex-grow">An acoustic analysis tool that uses neural networks to classify the characteristics of a space from an audio impulse.</p>
                     <div class="mt-auto pt-4">
@@ -265,10 +303,10 @@
                             <span class="bg-gray-600/50 text-gray-300 text-xs font-medium px-2 py-1 rounded-full">Acoustics</span>
                             <span class="bg-gray-600/50 text-gray-300 text-xs font-medium px-2 py-1 rounded-full">Signal Processing</span>
                         </div>
-                        <a href="https://github.com/ninuxi/acoustic-space-analyzer-ai-pro" target="_blank" class="text-purple-400 font-semibold">View Code &rarr;</a>
+                        <a href="https://github.com/ninuxi/acoustic-space-analyzer-ai-pro" target="_blank" rel="noopener noreferrer" class="text-teal-400 font-semibold">View Code &rarr;</a>
                     </div>
                 </div>
-                <div class="bg-slate-800/50 p-6 rounded-xl border border-gray-700/50 flex flex-col">
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-gray-700/50 flex flex-col h-full shadow-2xl shadow-teal-900/10 transition-transform duration-200 hover:-translate-y-1 ring-1 ring-transparent hover:ring-teal-400/30 hover:shadow-teal-900/20 focus-within:ring-teal-400/40">
                      <h4 class="font-bold text-xl text-white">LAIVE Interactive AI</h4>
                     <p class="text-sm text-gray-400 mt-2 flex-grow">A framework for AI-driven interactive experiences, integrating LLMs and computer vision for real-time generative dialogue.</p>
                      <div class="mt-auto pt-4">
@@ -277,7 +315,7 @@
                             <span class="bg-gray-600/50 text-gray-300 text-xs font-medium px-2 py-1 rounded-full">LLM</span>
                             <span class="bg-gray-600/50 text-gray-300 text-xs font-medium px-2 py-1 rounded-full">Generative AI</span>
                         </div>
-                        <a href="https://github.com/ninuxi/laive-interactive-ai-experience" target="_blank" class="text-purple-400 font-semibold">View Code &rarr;</a>
+                        <a href="https://github.com/ninuxi/laive-interactive-ai-experience" target="_blank" rel="noopener noreferrer" class="text-teal-400 font-semibold">View Code &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -287,6 +325,9 @@
             <p>&copy; 2025 Antonio Mainenti. Built with HTML & Tailwind CSS, deployed on GitHub Pages.</p>
         </footer>
     </div>
+
+    <!-- Back to top -->
+    <button id="backToTop" aria-label="Back to top" class="hidden fixed bottom-6 right-6 z-40 bg-teal-600 hover:bg-teal-500 text-white font-semibold px-4 py-2 rounded-full shadow-lg">↑ Back to top</button>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -299,13 +340,46 @@
                     const arrow = this.querySelector('.arrow');
 
                     if (content) {
-                        content.classList.toggle('hidden');
+                        const isHidden = content.classList.toggle('hidden');
+                        // ARIA: update expanded state
+                        this.setAttribute('aria-expanded', String(!isHidden));
+                        // Animate arrow
                         if (arrow) {
-                            arrow.style.transform = content.classList.contains('hidden') ? 'rotate(0deg)' : 'rotate(180deg)';
+                            arrow.classList.add('transition-transform','duration-200');
+                            arrow.style.transform = isHidden ? 'rotate(0deg)' : 'rotate(180deg)';
                         }
                     }
                 });
+
+                // Initialize ARIA on load
+                const contentId = trigger.getAttribute('data-accordion-trigger') + '-content';
+                const content = document.getElementById(contentId);
+                if (content) {
+                    trigger.setAttribute('aria-expanded', String(!content.classList.contains('hidden')));
+                    trigger.setAttribute('aria-controls', contentId);
+                }
             });
+
+            // Back-to-top button
+            const backToTop = document.getElementById('backToTop');
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const toggleBackToTop = () => {
+                if (!backToTop) return;
+                if (window.scrollY > 500) backToTop.classList.remove('hidden');
+                else backToTop.classList.add('hidden');
+            };
+            window.addEventListener('scroll', toggleBackToTop, { passive: true });
+            toggleBackToTop();
+            if (backToTop) {
+                backToTop.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
+                    const h1 = document.querySelector('h1');
+                    if (h1) {
+                        h1.setAttribute('tabindex','-1');
+                        setTimeout(() => { try { h1.focus({ preventScroll: true }); } catch (_) { h1.focus(); } }, 300);
+                    }
+                });
+            }
         });
     </script>
 
