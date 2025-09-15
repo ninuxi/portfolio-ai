@@ -49,10 +49,10 @@
       ]
     }
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com" defer></script>
     <style>
     :root { color-scheme: dark; }
     body {
@@ -72,6 +72,7 @@
         background-size: 200% 200%;
         animation: gradientShift 18s ease infinite;
         will-change: background-position;
+        transform: translateZ(0); /* Force GPU acceleration */
     }
     .gradient-text { color: #ffffff; }
     @keyframes gradientShift {
@@ -218,7 +219,7 @@
                                 <span>Ideale per la preparazione di dataset per il machine learning, questo script Python automatizza task ripetitivi come il resampling, la normalizzazione del volume, il trimming del silenzio e l'estrazione di feature (es. MFCC, spettrogrammi).</span>
                                 <span>L'utente può definire una catena di processi tramite un file di configurazione, rendendo lo strumento estremamente flessibile per ottimizzare i flussi di lavoro di data preparation.</span>
                              </p>
-                             <img src="batch-processor.gif" alt="Demo del Batch Processor in esecuzione" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-4">
+                             <img src="batch-processor.gif" alt="Demo del Batch Processor in esecuzione" width="400" height="300" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-4">
                         </div>
                     <div id="demo4-content" class="hidden mt-6 bg-slate-900/50 p-6 rounded-lg border border-gray-700">
                         <h4 class="text-xl font-bold text-teal-400 mb-4">Demo Week 4</h4>
@@ -228,22 +229,22 @@
                                     <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">
                                         Sfruttando l'API del tool, lo script arricchisce i contenuti con metadati, segmenta l'audio per identificare parlato/musica e applica modelli di speech-to-text per la trascrizione.
                                     </p>
-                                    <img src="demo-rai.gif" alt="Demo del terminale che esegue Rai Archive Tool" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
+                                    <img src="demo-rai.gif" alt="Demo del terminale che esegue Rai Archive Tool" width="300" height="200" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
                                 </div>
                                 <div class="bg-slate-800 p-4 rounded-lg flex flex-col">
                                     <h5 class="font-semibold text-white">Estrazione Metadati Audio</h5>
                                     <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">Script per l'estrazione automatica di metadati tecnici e descrittivi da file audio, essenziale per la catalogazione di grandi archivi.</p>
-                                    <img src="test_metadata.gif" alt="Demo estrazione metadati" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
+                                    <img src="test_metadata.gif" alt="Demo estrazione metadati" width="300" height="200" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
                                 </div>
                                 <div class="bg-slate-800 p-4 rounded-lg flex flex-col">
                                     <h5 class="font-semibold text-white">Classificatore Beni Culturali</h5>
                                     <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">Un modello di deep learning addestrato per classificare contenuti audio-visivi legati ai beni culturali (dialoghi, musica d'epoca, suoni).</p>
-                                    <img src="heritage_classifier.gif" alt="Demo classificatore culturale" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
+                                    <img src="heritage_classifier.gif" alt="Demo classificatore culturale" width="300" height="200" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
                                 </div>
                                 <div class="bg-slate-800 p-4 rounded-lg flex flex-col">
                                     <h5 class="font-semibold text-white">Piattaforma AI Culturale</h5>
                                     <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">Simulazione di una piattaforma web che integra i vari strumenti, offrendo un'interfaccia unica per l'analisi e la ricerca negli archivi digitali.</p>
-                                    <img src="cultural_ai_platform.gif" alt="Demo piattaforma AI" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
+                                    <img src="cultural_ai_platform.gif" alt="Demo piattaforma AI" width="300" height="200" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
                                 </div>
                             </div>
                         </div>
@@ -255,7 +256,7 @@
                                     <p class="text-sm text-gray-400 mt-1 mb-3">
                                        Questa simulazione mostra un sistema audio AI applicato a spazi espositivi come il MAXXI di Roma o la Triennale di Milano. Superando il concetto di audioguida passiva, il sistema traccia i visitatori e adatta dinamicamente l'ambiente sonoro (musica, narrazioni) per creare un'esperienza coinvolgente e personalizzata.
                                     </p>
-                                    <img src="demo-maxxi.gif" alt="Demo del sistema interattivo per il MAXXI" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-4">
+                                    <img src="demo-maxxi.gif" alt="Demo del sistema interattivo per il MAXXI" width="400" height="250" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-4">
                                 </div>
                                 <div class="bg-slate-800 p-4 rounded-lg">
                                      <h5 class="font-semibold text-white">Elaborazione Audio AI</h5>
@@ -272,17 +273,17 @@
                                 <div class="bg-slate-800 p-4 rounded-lg flex flex-col">
                                     <h5 class="font-semibold text-white">Piattaforma di Produzione Enterprise</h5>
                                     <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">Questo sistema analizza in parallelo intere cartelle di file audio. Ogni operazione è tracciata su un database per garantire affidabilità e scalabilità, rendendolo una soluzione robusta per archivi di grandi dimensioni.</p>
-                                    <img src="demo_produzione.gif" alt="Demo della piattaforma di produzione" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
+                                                                        <img src="demo_produzione.gif" alt="Demo della piattaforma di produzione" width="300" height="200" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
                                 </div>
                                 <div class="bg-slate-800 p-4 rounded-lg flex flex-col">
-                                    <h5 class="font-semibold text-white">IA per il Patrimonio Culturale</h5>
-                                    <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">Una soluzione specializzata che simula un progetto per istituzioni come RAI Teche. L'IA esegue un'analisi culturale, rileva il degrado dei nastri storici e genera un business case per la conservazione.</p>
-                                    <img src="demo_heritage.gif" alt="Demo della soluzione per il patrimonio culturale" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
+                                    <h5 class="font-semibold text-white">Soluzione Patrimonio Culturale</h5>
+                                    <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">Strumento specializzato per l'analisi e digitalizzazione di contenuti relativi al patrimonio culturale.</p>
+                                    <img src="demo_heritage.gif" alt="Demo della soluzione per il patrimonio culturale" width="300" height="200" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
                                 </div>
                                 <div class="bg-slate-800 p-4 rounded-lg flex flex-col">
-                                    <h5 class="font-semibold text-white">API Aperta e Flessibile</h5>
-                                    <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">Questa demo mostra la nostra API moderna e documentata. Il sistema non è una scatola chiusa, ma si integra facilmente nei flussi di lavoro esistenti, garantendo un'adozione rapida e a basso costo.</p>
-                                    <img src="demo_api.gif" alt="Demo dell'API" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
+                                    <h5 class="font-semibold text-white">API Completa</h5>
+                                    <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">Demo dell'API RESTful che espone tutte le funzionalità degli strumenti di analisi.</p>
+                                    <img src="demo_api.gif" alt="Demo dell'API" width="300" height="200" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
                                 </div>
                              </div>
                         </div>
@@ -411,16 +412,28 @@
                 }
             });
 
-            // Pulsante Torna su
+            // Pulsante Torna su - Ottimizzato con throttling
             const backToTop = document.getElementById('backToTop');
             const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let ticking = false;
+            
             const toggleBackToTop = () => {
                 if (!backToTop) return;
                 if (window.scrollY > 500) backToTop.classList.remove('hidden');
                 else backToTop.classList.add('hidden');
+                ticking = false;
             };
-            window.addEventListener('scroll', toggleBackToTop, { passive: true });
+            
+            const handleScroll = () => {
+                if (!ticking) {
+                    requestAnimationFrame(toggleBackToTop);
+                    ticking = true;
+                }
+            };
+            
+            window.addEventListener('scroll', handleScroll, { passive: true });
             toggleBackToTop();
+            
             if (backToTop) {
                 backToTop.addEventListener('click', () => {
                     window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });

@@ -1,7 +1,35 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
+        .brand-gradient-text {
+        background-image: linear-gradient(to right, #22d3ee, #34d399); /* Cyan -> Green Gradient */
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        background-size: 200% 200%;
+        animation: gradientShift 18s ease infinite;
+        will-change: background-position;
+            // Back to top button - Optimized with throttling
+            const backToTop = document.getElementById('backToTop');
+            const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            let ticking = false;
+            
+            const toggleBackToTop = () => {
+                if (!backToTop) return;
+                if (window.scrollY > 500) backToTop.classList.remove('hidden');
+                else backToTop.classList.add('hidden');
+                ticking = false;
+            };
+            
+            const handleScroll = () => {
+                if (!ticking) {
+                    requestAnimationFrame(toggleBackToTop);
+                    ticking = true;
+                }
+            };
+            
+            window.addEventListener('scroll', handleScroll, { passive: true });ransform: translateZ(0); /* Force GPU acceleration */
+    }rset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI For Live | Antonio Mainenti's Portfolio</title>
     <meta name="author" content="Antonio Mainenti">
@@ -49,10 +77,10 @@
       ]
     }
     </script>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com" defer></script>
     <style>
     :root { color-scheme: dark; }
     body {
