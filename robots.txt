@@ -1,7 +1,7 @@
-    # Allow all crawlers full access to the site.
-    User-agent: *
-    Allow: /
+# Allow all crawlers full access to the site.
+User-agent: *
+Allow: /
 
-    # Sitemap location
-    Sitemap: https://aiforlive.com/sitemap.xml
+# Sitemap location
+Sitemap: https://aiforlive.com/sitemap.xml
 
