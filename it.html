@@ -19,6 +19,7 @@
     <link rel="canonical" href="https://aiforlive.com/it.html">
     <link rel="alternate" hreflang="it" href="https://aiforlive.com/it.html">
     <link rel="alternate" hreflang="en" href="https://aiforlive.com/en.html">
+    <link rel="alternate" hreflang="x-default" href="https://aiforlive.com/">
     <meta name="theme-color" content="#0b1020">
     <meta property="og:locale" content="it_IT">
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -106,7 +107,7 @@
         <header class="text-center mb-24">
             <img src="/cerchio.png" alt="AI For Live Logo" width="160" height="160" decoding="async" fetchpriority="high" class="bg-slate-900 w-40 h-40 mx-auto mb-6 rounded-full shadow-2xl shadow-teal-900/50 border-2 border-teal-500/30 transition-transform duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-teal-500/30 hover:ring-2 hover:ring-teal-500/20">
             <h1 class="text-5xl md:text-6xl font-black brand-gradient-text leading-tight" tabindex="-1">AI For Live</h1>
-            
+
             <div class="mt-8">
                 <h2 class="text-2xl md:text-3xl font-bold text-white leading-tight">
                     Antonio Mainenti
@@ -133,9 +134,11 @@
 
     <main id="content">
             <h2 class="text-4xl font-bold text-white text-center mb-12">Progetti</h2>
-            <div class="grid gap-10 md:grid-cols-2 xl:grid-cols-3 mb-16">
-                
-                                <!-- MOOD 2.0 - Soundscape Agent -->
+
+            <!-- MOOD 2.0 & MOOD 1.0 - Progetti Principali -->
+            <div class="grid gap-10 md:grid-cols-2 mb-8">
+
+                <!-- MOOD 2.0 - Soundscape Agent -->
                 <div class="bg-slate-800/50 p-8 rounded-2xl border border-teal-500/20 shadow-2xl shadow-teal-900/20 flex flex-col h-full transition-transform duration-200 hover:-translate-y-1 ring-1 ring-transparent hover:ring-teal-400/30 hover:shadow-teal-900/30 focus-within:ring-teal-400/40">
                     <h3 class="text-3xl font-bold text-white mb-3">MOOD 2.0 - Mood Soundscape Agent</h3>
                     <p class="mb-4 text-gray-400 flex-grow">
@@ -163,11 +166,12 @@
                             </div>
                         </div>
                         <div class="flex flex-wrap gap-4 mt-4">
-                            <a href="https://mood2.aiforlive.com/" target="_blank" rel="noopener noreferrer" class="bg-teal-600 hover:bg-teal-500 text-white font-semibold px-5 py-3 rounded-lg transition-transform hover:scale-105">Demo →</a>
+                            <a href="https://mood2.aiforlive.com/" target="_blank" rel="noopener noreferrer" class="bg-teal-600 hover:bg-teal-500 text-white font-semibold px-5 py-3 rounded-lg transition-transform hover:scale-105">Demo &rarr;</a>
                         </div>
                     </div>
                 </div>
 
+                <!-- MOOD 1.0 -->
                 <div class="bg-slate-800/50 p-8 rounded-2xl border border-teal-500/20 shadow-2xl shadow-teal-900/20 flex flex-col h-full transition-transform duration-200 hover:-translate-y-1 ring-1 ring-transparent hover:ring-teal-400/30 hover:shadow-teal-900/30 focus-within:ring-teal-400/40">
                     <h3 class="text-3xl font-bold text-white mb-3">MOOD: Adaptive Artistic Environment</h3>
                     <p class="mb-4 text-gray-400 flex-grow">
@@ -202,13 +206,89 @@
                         <div class="flex flex-wrap gap-4 mt-4">
                             <a href="https://mood1.aiforlive.com/" target="_blank" rel="noopener noreferrer" class="bg-teal-600 hover:bg-teal-500 text-white font-semibold px-5 py-3 rounded-lg transition-transform hover:scale-105">Live Demo</a>
                             <a href="https://github.com/ninuxi/mood-showcase" target="_blank" rel="noopener noreferrer" class="bg-white text-slate-900 font-semibold px-5 py-3 rounded-lg transition-transform hover:scale-105">Esplora il Codice</a>
-                            <a href="mood-project.html" class="bg-gradient-to-r from-emerald-500 via-green-500 to-lime-500 hover:from-emerald-400 hover:to-lime-400 text-white font-semibold px-5 py-3 rounded-lg transition-transform hover:scale-105 ring-2 ring-lime-300/30 shadow-lg shadow-emerald-900/40">Dettagli Progetto →</a>
+                            <a href="mood-project.html" class="bg-gradient-to-r from-emerald-500 via-green-500 to-lime-500 hover:from-emerald-400 hover:to-lime-400 text-white font-semibold px-5 py-3 rounded-lg transition-transform hover:scale-105 ring-2 ring-lime-300/30 shadow-lg shadow-emerald-900/40">Dettagli Progetto &rarr;</a>
                         </div>
-                        <p class="text-xs text-gray-500 mt-2">(Nota: Il repository completo non è pubblico. Lo showcase illustra i componenti chiave.)</p>
+                        <p class="text-xs text-gray-500 mt-2">(Nota: Il repository completo non &egrave; pubblico. Lo showcase illustra i componenti chiave.)</p>
                     </div>
                 </div>
-                
-                <div class="bg-slate-800/50 p-8 rounded-2xl border border-teal-500/20 shadow-2xl shadow-teal-900/20 flex flex-col h-full transition-transform duration-200 hover:-translate-y-1 ring-1 ring-transparent hover:ring-teal-400/30 hover:shadow-teal-900/30 focus-within:ring-teal-400/40">
+
+            </div>
+
+            <!-- MOOD 1.0 vs 2.0 - Sezione a scomparsa -->
+            <div id="comparison-section" class="mb-16">
+                <button data-accordion-trigger="mood-comparison" class="w-full inline-flex items-center justify-between bg-gradient-to-r from-slate-800/80 to-slate-800/50 border border-teal-500/30 hover:border-teal-400/50 text-white font-bold px-6 py-5 rounded-xl transition-colors shadow-lg" aria-expanded="false" aria-controls="mood-comparison-content">
+                    <span class="text-xl">MOOD 1.0 vs MOOD 2.0</span>
+                    <span class="arrow text-teal-300 text-lg">&blacktriangledown;</span>
+                </button>
+                <div id="mood-comparison-content" class="hidden mt-4 p-6 md:p-8 bg-slate-800/30 rounded-xl border border-teal-500/20">
+                    <p class="text-gray-400 mb-8 max-w-2xl">
+                        Scopri come la nuova generazione di MOOD trasforma il design sonoro con intelligenza artificiale autonoma.
+                    </p>
+
+                    <div class="mb-8 p-6 bg-slate-800/30 rounded-xl border border-teal-500/20">
+                        <h3 class="text-xl font-semibold text-teal-300 mb-3">&#128161; Cos'&egrave; un Agente Sonoro?</h3>
+                        <p class="text-gray-300">
+                            Un agente AI ascolta l'ambiente (luce, movimento, acustica) e genera soundscapes completamente nuovi in tempo reale,
+                            senza playlist predefinite. Impara dai tuoi spazi e adatta il suono momento dopo momento.
+                        </p>
+                    </div>
+
+                    <div class="overflow-x-auto mb-8">
+                        <table class="w-full text-sm">
+                            <thead>
+                                <tr class="border-b border-teal-500/30">
+                                    <th class="text-left py-4 px-4 font-semibold text-white">Caratteristica</th>
+                                    <th class="text-left py-4 px-4 font-semibold text-gray-400">MOOD 1.0</th>
+                                    <th class="text-left py-4 px-4 font-semibold text-teal-300">MOOD 2.0</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-slate-700/50 hover:bg-slate-800/20">
+                                    <td class="py-3 px-4 text-gray-300">Generazione Audio e Video</td>
+                                    <td class="py-3 px-4 text-gray-400">Playlist</td>
+                                    <td class="py-3 px-4 text-teal-300">Sintetizzazione AI in tempo reale</td>
+                                </tr>
+                                <tr class="border-b border-slate-700/50 hover:bg-slate-800/20">
+                                    <td class="py-3 px-4 text-gray-300">Adattabilit&agrave;</td>
+                                    <td class="py-3 px-4 text-gray-400">Manuali (scene predefinite)</td>
+                                    <td class="py-3 px-4 text-teal-300">Autonoma (impara dall'ambiente)</td>
+                                </tr>
+                                <tr class="border-b border-slate-700/50 hover:bg-slate-800/20">
+                                    <td class="py-3 px-4 text-gray-300">Intelligenza</td>
+                                    <td class="py-3 px-4 text-gray-400">Reattiva</td>
+                                    <td class="py-3 px-4 text-teal-300">Generativa + Predittiva</td>
+                                </tr>
+                                <tr class="border-b border-slate-700/50 hover:bg-slate-800/20">
+                                    <td class="py-3 px-4 text-gray-300">Scalabilit&agrave;</td>
+                                    <td class="py-3 px-4 text-gray-400">1-2 ambienti</td>
+                                    <td class="py-3 px-4 text-teal-300">Multi-room + cloud-ready</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div class="p-6 bg-slate-800/30 rounded-lg border border-teal-500/20 hover:border-teal-400/50 transition">
+                            <div class="text-3xl mb-3">&#127919;</div>
+                            <h4 class="font-semibold text-white mb-2">Zero Playlist</h4>
+                            <p class="text-gray-400 text-sm">Ogni momento &egrave; unico. Niente ripetizioni, solo soundscapes generati dal vivo.</p>
+                        </div>
+                        <div class="p-6 bg-slate-800/30 rounded-lg border border-teal-500/20 hover:border-teal-400/50 transition">
+                            <div class="text-3xl mb-3">&#9889;</div>
+                            <h4 class="font-semibold text-white mb-2">Impara dall'Ambiente</h4>
+                            <p class="text-gray-400 text-sm">Legge luce, movimento, acustica reale e adatta l'audio automaticamente.</p>
+                        </div>
+                        <div class="p-6 bg-slate-800/30 rounded-lg border border-teal-500/20 hover:border-teal-400/50 transition">
+                            <div class="text-3xl mb-3">&#128268;</div>
+                            <h4 class="font-semibold text-white mb-2">Open Standard</h4>
+                            <p class="text-gray-400 text-sm">OSC integra qualsiasi sistema: QLab, Resolume, grandMA, TouchDesigner.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Audio AI Projects -->
+            <div class="bg-slate-800/50 p-8 rounded-2xl border border-teal-500/20 shadow-2xl shadow-teal-900/20 mb-10 flex flex-col transition-transform duration-200 hover:-translate-y-1 ring-1 ring-transparent hover:ring-teal-400/30 hover:shadow-teal-900/30 focus-within:ring-teal-400/40">
                     <h3 class="text-3xl font-bold text-white mb-3">Audio AI Projects</h3>
                     <p class="mb-4 text-gray-400 flex-grow">
                         Collezione di librerie e modelli per l'analisi e la sintesi audio-reattiva tramite deep learning, inclusi classificazione di eventi sonori e generazione di texture.
@@ -236,24 +316,24 @@
                         </div>
                         <div class="flex flex-wrap gap-4 mt-4">
                                     <a href="https://github.com/ninuxi/audio-ai-projects" target="_blank" rel="noopener noreferrer" class="bg-white text-slate-900 font-semibold px-5 py-3 rounded-lg transition-transform hover:scale-105">Vedi i Progetti su GitHub</a>
-                                    <a href="audio-ai-projects-it.html" class="bg-gradient-to-r from-emerald-500 via-green-500 to-lime-500 hover:from-emerald-400 hover:to-lime-400 text-white font-semibold px-5 py-3 rounded-lg transition-transform hover:scale-105 ring-2 ring-lime-300/30 shadow-lg shadow-emerald-900/40">Dettagli Progetto →</a>
+                                    <a href="audio-ai-projects-it.html" class="bg-gradient-to-r from-emerald-500 via-green-500 to-lime-500 hover:from-emerald-400 hover:to-lime-400 text-white font-semibold px-5 py-3 rounded-lg transition-transform hover:scale-105 ring-2 ring-lime-300/30 shadow-lg shadow-emerald-900/40">Dettagli Progetto &rarr;</a>
                         </div>
                                 <div class="mt-6">
                                     <h5 class="font-semibold text-white text-sm mb-3">Live Demos:</h5>
                              <div class="flex flex-wrap gap-3 bg-lime-900/25 border border-lime-600/40 ring-1 ring-lime-500/20 rounded-xl p-4">
                           <a href="https://huggingface.co/spaces/antoniiiii/audio-visualizer-demo" target="_blank" rel="noopener noreferrer" class="bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors">Demo 1: Visualizer</a>
-                          <button data-accordion-trigger="demo2" class="bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors flex items-center gap-2" aria-expanded="false" aria-controls="demo2-content">Demo 2: Batch Processor <span class="arrow">▼</span></button>
+                          <button data-accordion-trigger="demo2" class="bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors flex items-center gap-2" aria-expanded="false" aria-controls="demo2-content">Demo 2: Batch Processor <span class="arrow">&#9660;</span></button>
                           <a href="https://huggingface.co/spaces/antoniiiii/call-analytics" target="_blank" rel="noopener noreferrer" class="bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors">Demo 3: Call Analytics</a>
-                          <button data-accordion-trigger="demo4" class="bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors flex items-center gap-2" aria-expanded="false" aria-controls="demo4-content">Demo 4: Lab Week <span class="arrow">▼</span></button>
-                          <button data-accordion-trigger="demo5" class="bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors flex items-center gap-2" aria-expanded="false" aria-controls="demo5-content">Demo 5: Audio AI Musei <span class="arrow">▼</span></button>
-                          <button data-accordion-trigger="demo6" class="bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors flex items-center gap-2" aria-expanded="false" aria-controls="demo6-content">Demo 6: Sistemi Enterprise <span class="arrow">▼</span></button>
+                          <button data-accordion-trigger="demo4" class="bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors flex items-center gap-2" aria-expanded="false" aria-controls="demo4-content">Demo 4: Lab Week <span class="arrow">&#9660;</span></button>
+                          <button data-accordion-trigger="demo5" class="bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors flex items-center gap-2" aria-expanded="false" aria-controls="demo5-content">Demo 5: Audio AI Musei <span class="arrow">&#9660;</span></button>
+                          <button data-accordion-trigger="demo6" class="bg-teal-600 hover:bg-teal-500 text-white text-xs font-semibold px-3 py-1.5 rounded-full transition-colors flex items-center gap-2" aria-expanded="false" aria-controls="demo6-content">Demo 6: Sistemi Enterprise <span class="arrow">&#9660;</span></button>
                            </div>
                         </div>
                     <div id="demo2-content" class="hidden mt-6 bg-slate-900/50 p-6 rounded-lg border border-gray-700">
                         <h4 class="text-xl font-bold text-teal-400 mb-4">Batch Processor</h4>
                              <p class="text-sm text-gray-400 mt-1 mb-3 space-y-2">
                                 <span>Ideale per la preparazione di dataset per il machine learning, questo script Python automatizza task ripetitivi come il resampling, la normalizzazione del volume, il trimming del silenzio e l'estrazione di feature (es. MFCC, spettrogrammi).</span>
-                                <span>L'utente può definire una catena di processi tramite un file di configurazione, rendendo lo strumento estremamente flessibile per ottimizzare i flussi di lavoro di data preparation.</span>
+                                <span>L'utente pu&ograve; definire una catena di processi tramite un file di configurazione, rendendo lo strumento estremamente flessibile per ottimizzare i flussi di lavoro di data preparation.</span>
                              </p>
                              <img src="batch-processor.gif" alt="Demo del Batch Processor in esecuzione" width="400" height="300" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-4">
                         </div>
@@ -297,7 +377,7 @@
                                 <div class="bg-slate-800 p-4 rounded-lg">
                                      <h5 class="font-semibold text-white">Elaborazione Audio AI</h5>
                                     <p class="text-sm text-gray-400 mt-1 mb-3">
-                                       Questa demo su Hugging Face fa vedere come l'API di base alimenta il sistema. Testa il motore AI che seleziona i contenuti audio in tempo reale, dimostrando la robustezza e la reattività del backend.
+                                       Questa demo su Hugging Face fa vedere come l'API di base alimenta il sistema. Testa il motore AI che seleziona i contenuti audio in tempo reale, dimostrando la robustezza e la reattivit&agrave; del backend.
                                     </p>
                                     <a href="https://huggingface.co/spaces/antoniiiii/production-audio-api" target="_blank" rel="noopener noreferrer" class="bg-sky-600 hover:bg-sky-500 text-white font-semibold px-4 py-2 rounded-lg transition-colors inline-block mt-4">Testa l'API su Hugging Face</a>
                                 </div>
@@ -308,7 +388,7 @@
                              <div class="grid md:grid-cols-3 gap-6">
                                 <div class="bg-slate-800 p-4 rounded-lg flex flex-col">
                                     <h5 class="font-semibold text-white">Piattaforma di Produzione Enterprise</h5>
-                                    <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">Questo sistema analizza in parallelo intere cartelle di file audio. Ogni operazione è tracciata su un database per garantire affidabilità e scalabilità, rendendolo una soluzione robusta per archivi di grandi dimensioni.</p>
+                                    <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">Questo sistema analizza in parallelo intere cartelle di file audio. Ogni operazione &egrave; tracciata su un database per garantire affidabilit&agrave; e scalabilit&agrave;, rendendolo una soluzione robusta per archivi di grandi dimensioni.</p>
                                                                         <img src="demo_produzione.gif" alt="Demo della piattaforma di produzione" width="300" height="200" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
                                 </div>
                                 <div class="bg-slate-800 p-4 rounded-lg flex flex-col">
@@ -318,18 +398,17 @@
                                 </div>
                                 <div class="bg-slate-800 p-4 rounded-lg flex flex-col">
                                     <h5 class="font-semibold text-white">API Completa</h5>
-                                    <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">Demo dell'API RESTful che espone tutte le funzionalità degli strumenti di analisi.</p>
+                                    <p class="text-sm text-gray-400 mt-1 mb-3 flex-grow">Demo dell'API RESTful che espone tutte le funzionalit&agrave; degli strumenti di analisi.</p>
                                     <img src="demo_api.gif" alt="Demo dell'API" width="300" height="200" loading="lazy" decoding="async" class="rounded-md border border-gray-600 mt-auto">
                                 </div>
                              </div>
                         </div>
                     </div>
-                </div>
-
             </div>
-            
+
+            <!-- Laboratorio & Ricerca -->
             <h3 class="text-2xl font-bold text-white text-center mb-8">Laboratorio & Ricerca</h3>
-            <div class="grid md:grid-cols-3 gap-6">
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="bg-slate-800/50 p-6 rounded-xl border border-gray-700/50 flex flex-col h-full shadow-2xl shadow-teal-900/10 transition-transform duration-200 hover:-translate-y-1 ring-1 ring-transparent hover:ring-teal-400/30 hover:shadow-teal-900/20 focus-within:ring-teal-400/40">
                     <h4 class="font-bold text-xl text-white">AI Audio-Vision Lab</h4>
                     <p class="text-sm text-gray-400 mt-2 flex-grow">Prototipazione di sistemi che correlano input visivi con output sonori generativi per esplorare la sinestesia computazionale.</p>
@@ -366,6 +445,50 @@
                         <a href="https://github.com/ninuxi/laive-interactive-ai-experience" target="_blank" rel="noopener noreferrer" class="text-teal-400 font-semibold">Vedi Codice &rarr;</a>
                     </div>
                 </div>
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-gray-700/50 flex flex-col h-full shadow-2xl shadow-teal-900/10 transition-transform duration-200 hover:-translate-y-1 ring-1 ring-transparent hover:ring-teal-400/30 hover:shadow-teal-900/20 focus-within:ring-teal-400/40">
+                    <h4 class="font-bold text-xl text-white">MAI_verb</h4>
+                    <p class="text-sm text-gray-400 mt-2 flex-grow">Plugin di riverbero algoritmico professionale per DAW con algoritmo 8x8 FDN, early reflections e modulation integrata.</p>
+                    <div class="mt-auto pt-4">
+                        <h5 class="font-semibold text-white text-xs mb-2">Tags:</h5>
+                        <div class="flex flex-wrap gap-1 mb-4">
+                            <span class="bg-gray-600/50 text-gray-300 text-xs font-medium px-2 py-1 rounded-full">Audio Plugin</span>
+                            <span class="bg-gray-600/50 text-gray-300 text-xs font-medium px-2 py-1 rounded-full">DSP</span>
+                        </div>
+                        <a href="https://github.com/ninuxi/MAI_verb" target="_blank" rel="noopener noreferrer" class="text-teal-400 font-semibold">Vedi Codice &rarr;</a>
+                    </div>
+                </div>
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-gray-700/50 flex flex-col h-full shadow-2xl shadow-teal-900/10 transition-transform duration-200 hover:-translate-y-1 ring-1 ring-transparent hover:ring-teal-400/30 hover:shadow-teal-900/20 focus-within:ring-teal-400/40">
+                    <h4 class="font-bold text-xl text-white">Auto EQ Agente</h4>
+                    <p class="text-sm text-gray-400 mt-2 flex-grow">Agente AI per l'equalizzazione automatica dell'audio. Analizza il contenuto sonoro e applica correzioni EQ intelligenti in tempo reale.</p>
+                    <div class="mt-auto pt-4">
+                        <h5 class="font-semibold text-white text-xs mb-2">Tags:</h5>
+                        <div class="flex flex-wrap gap-1 mb-4">
+                            <span class="bg-gray-600/50 text-gray-300 text-xs font-medium px-2 py-1 rounded-full">AI Audio</span>
+                            <span class="bg-gray-600/50 text-gray-300 text-xs font-medium px-2 py-1 rounded-full">EQ</span>
+                            <span class="bg-gray-600/50 text-gray-300 text-xs font-medium px-2 py-1 rounded-full">DSP</span>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="https://auto-eq-agente.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-teal-400 font-semibold">Demo &rarr;</a>
+                            <a href="https://github.com/ninuxi/auto-eq-agente" target="_blank" rel="noopener noreferrer" class="text-teal-400 font-semibold">Vedi Codice &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-slate-800/50 p-6 rounded-xl border border-gray-700/50 flex flex-col h-full shadow-2xl shadow-teal-900/10 transition-transform duration-200 hover:-translate-y-1 ring-1 ring-transparent hover:ring-teal-400/30 hover:shadow-teal-900/20 focus-within:ring-teal-400/40">
+                    <h4 class="font-bold text-xl text-white">Video Synth</h4>
+                    <p class="text-sm text-gray-400 mt-2 flex-grow">Sperimentazione di sintesi video generativa. Prototipo per la creazione di visual reattivi e sincronizzati con sorgenti audio. Progetto "Wash tha AI Gang".</p>
+                    <div class="mt-auto pt-4">
+                        <h5 class="font-semibold text-white text-xs mb-2">Tags:</h5>
+                        <div class="flex flex-wrap gap-1 mb-4">
+                            <span class="bg-gray-600/50 text-gray-300 text-xs font-medium px-2 py-1 rounded-full">Video Synthesis</span>
+                            <span class="bg-gray-600/50 text-gray-300 text-xs font-medium px-2 py-1 rounded-full">Generative Art</span>
+                        </div>
+                        <div class="flex flex-wrap gap-3">
+                            <a href="https://wash.altervista.org/" target="_blank" rel="noopener noreferrer" class="text-teal-400 font-semibold">Wash tha AI Gang &rarr;</a>
+                            <a href="https://video-synth-testing.vercel.app/" target="_blank" rel="noopener noreferrer" class="text-teal-400 font-semibold">Demo &rarr;</a>
+                            <a href="https://github.com/ninuxi/video-synth-testing" target="_blank" rel="noopener noreferrer" class="text-teal-400 font-semibold">Vedi Codice &rarr;</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </main>
 
@@ -377,137 +500,47 @@
                 Creative Technologist e Audio AI Engineer con esperienza in sistemi interattivi per installazioni, teatro e brand. Progetto soluzioni che uniscono computer vision, AI audio e integrazione con i principali software per il live (QLab, Resolume, Ableton Live, grandMA, TouchDesigner, Chamsys...) per esperienze reattive in tempo reale.
             </p>
             <p class="max-w-3xl mx-auto text-gray-400 text-center mt-3">
-                Nel corso degli anni ho collaborato a progetti per <strong class="text-white/90">Triennale Milano</strong>, <strong class="text-white/90">D&amp;D Group</strong>, <strong class="text-white/90">Cartier</strong>, <strong class="text-white/90">Mulino Bianco</strong> e diverse realtà teatrali e istituzioni culturali.
+                Nel corso degli anni ho collaborato a progetti per <strong class="text-white/90">Triennale Milano</strong>, <strong class="text-white/90">D&amp;D Group</strong>, <strong class="text-white/90">Cartier</strong>, <strong class="text-white/90">Mulino Bianco</strong> e diverse realt&agrave; teatrali e istituzioni culturali.
             </p>
             <div class="max-w-3xl mx-auto mt-8">
                 <button data-accordion-trigger="about-hl" class="w-full inline-flex items-center justify-between bg-emerald-800 hover:bg-emerald-700 text-white font-semibold px-4 py-3 rounded-lg transition-colors" aria-expanded="false" aria-controls="about-hl-content">
                     <span>Esperienze recenti</span>
-                    <span class="arrow">▼</span>
+                    <span class="arrow">&#9660;</span>
                 </button>
                 <div id="about-hl-content" class="hidden mt-4 bg-slate-900/50 p-6 rounded-lg border border-gray-700 text-gray-300 text-sm leading-relaxed">
                     <div class="space-y-5">
                         <div>
                             <h4 class="font-semibold text-white/90">2025</h4>
-                            <p class="mt-1">🏡📺 Milano, Parma — Casa multimediale gigante di Mulino Bianco: programmazione e automazione audio‑video multicanale e luci. QLab. (ALL Communication, D&amp;D Group)</p>
+                            <p class="mt-1">&#127969;&#128250; Milano, Parma &mdash; Casa multimediale gigante di Mulino Bianco: programmazione e automazione audio&#8209;video multicanale e luci. QLab. (ALL Communication, D&amp;D Group)</p>
                         </div>
                         <div>
                             <h4 class="font-semibold text-white/90">2024</h4>
-                            <p class="mt-1">🎭🎺 Beatrice — Compagnia Scimmie Nude: sound design, quadrafonia live, mix di spatial audio per video, automazioni audio/luci, QLab.</p>
-                            <p class="mt-1">📽️🔊 Milano — Triennale: PARKing CHANce, Decades Apart (Fondazione Cartier, D&amp;D Group): sound design in‑situ, Dolby Atmos 9.1.6, automazioni, Reaper, plugin ambisonici.</p>
+                            <p class="mt-1">&#127917;&#127930; Beatrice &mdash; Compagnia Scimmie Nude: sound design, quadrafonia live, mix di spatial audio per video, automazioni audio/luci, QLab.</p>
+                            <p class="mt-1">&#128253;&#128266; Milano &mdash; Triennale: PARKing CHANce, Decades Apart (Fondazione Cartier, D&amp;D Group): sound design in&#8209;situ, Dolby Atmos 9.1.6, automazioni, Reaper, plugin ambisonici.</p>
                         </div>
                         <div>
                             <h4 class="font-semibold text-white/90">2023</h4>
-                            <p class="mt-1">🎹🍾 Napoli — Ryuichi Sakamoto for Krug (D&amp;D Group, Mottola Solution): 32 uscite audio, automazioni con QLab e MadMapper.</p>
-                            <p class="mt-1">👂 Lucca — Sound of Stones, Villa Reale di Marlia (D&amp;D Group, Mottola Solution): surround e automazioni con QLab e grandMA.</p>
+                            <p class="mt-1">&#127929;&#127870; Napoli &mdash; Ryuichi Sakamoto for Krug (D&amp;D Group, Mottola Solution): 32 uscite audio, automazioni con QLab e MadMapper.</p>
+                            <p class="mt-1">&#128066; Lucca &mdash; Sound of Stones, Villa Reale di Marlia (D&amp;D Group, Mottola Solution): surround e automazioni con QLab e grandMA.</p>
                         </div>
                         <div>
                             <h4 class="font-semibold text-white/90">2022</h4>
-                            <p class="mt-1">🎉 Milano — Harry Potter: A Yule Ball Celebration (D&amp;D Group, Mottola Solution): automazioni audio e luci con QLab.</p>
+                            <p class="mt-1">&#127881; Milano &mdash; Harry Potter: A Yule Ball Celebration (D&amp;D Group, Mottola Solution): automazioni audio e luci con QLab.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- MOOD 1.0 vs 2.0 Comparison Section -->
-        <section id="comparison-section" class="comparison-section py-16 bg-gradient-to-b from-slate-900/50 to-slate-950">
-    <div class="container mx-auto px-4">
-        <h2 class="text-4xl font-bold text-center text-white mb-4">MOOD 1.0 vs MOOD 2.0</h2>
-        <p class="text-center text-gray-400 mb-12 max-w-2xl mx-auto">
-            Scopri come la nuova generazione di MOOD trasforma il design sonoro con intelligenza artificiale autonoma.
-        </p>
-
-        <!-- Cos'è un Agente AI? -->
-        <div class="mb-12 p-6 bg-slate-800/30 rounded-xl border border-teal-500/20">
-            <h3 class="text-xl font-semibold text-teal-300 mb-3">💡 Cos'è un Agente Sonoro?</h3>
-            <p class="text-gray-300">
-                Un agente AI ascolta l'ambiente (luce, movimento, acustica) e genera soundscapes completamente nuovi in tempo reale, 
-                senza playlist predefinite. Impara dai tuoi spazi e adatta il suono momento dopo momento.
-            </p>
-        </div>
-
-        <!-- Comparison Table -->
-        <div class="overflow-x-auto mb-12">
-            <table class="w-full text-sm">
-                <thead>
-                    <tr class="border-b border-teal-500/30">
-                        <th class="text-left py-4 px-4 font-semibold text-white">Caratteristica</th>
-                        <th class="text-left py-4 px-4 font-semibold text-gray-400">MOOD 1.0</th>
-                        <th class="text-left py-4 px-4 font-semibold text-teal-300">MOOD 2.0</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="border-b border-slate-700/50 hover:bg-slate-800/20">
-                        <td class="py-3 px-4 text-gray-300">Generazione Audio</td>
-                        <td class="py-3 px-4 text-gray-400">Playlist + QLab</td>
-                        <td class="py-3 px-4 text-teal-300">Sintetizzazione AI in tempo reale</td>
-                    </tr>
-                    <tr class="border-b border-slate-700/50 hover:bg-slate-800/20">
-                        <td class="py-3 px-4 text-gray-300">Adattabilità</td>
-                        <td class="py-3 px-4 text-gray-400">Manuali (scene predefinite)</td>
-                        <td class="py-3 px-4 text-teal-300">Autonoma (impara dall'ambiente)</td>
-                    </tr>
-                    <tr class="border-b border-slate-700/50 hover:bg-slate-800/20">
-                        <td class="py-3 px-4 text-gray-300">Setup</td>
-                        <td class="py-3 px-4 text-gray-400">Lungo (script complessi)</td>
-                        <td class="py-3 px-4 text-teal-300">Rapido (config via UI)</td>
-                    </tr>
-                    <tr class="border-b border-slate-700/50 hover:bg-slate-800/20">
-                        <td class="py-3 px-4 text-gray-300">Integrazione</td>
-                        <td class="py-3 px-4 text-gray-400">QLab native</td>
-                        <td class="py-3 px-4 text-teal-300">OSC (QLab, Resolume, Ableton...)</td>
-                    </tr>
-                    <tr class="border-b border-slate-700/50 hover:bg-slate-800/20">
-                        <td class="py-3 px-4 text-gray-300">Intelligenza</td>
-                        <td class="py-3 px-4 text-gray-400">Reattiva</td>
-                        <td class="py-3 px-4 text-teal-300">Generativa + Predittiva</td>
-                    </tr>
-                    <tr class="border-b border-slate-700/50 hover:bg-slate-800/20">
-                        <td class="py-3 px-4 text-gray-300">Scalabilità</td>
-                        <td class="py-3 px-4 text-gray-400">1-2 ambienti</td>
-                        <td class="py-3 px-4 text-teal-300">Multi-room + cloud-ready</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-
-        <!-- Key Benefits -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="p-6 bg-slate-800/30 rounded-lg border border-teal-500/20 hover:border-teal-400/50 transition">
-                <div class="text-3xl mb-3">🎯</div>
-                <h4 class="font-semibold text-white mb-2">Zero Playlist</h4>
-                <p class="text-gray-400 text-sm">Ogni momento è unico. Niente ripetizioni, solo soundscapes generati dal vivo.</p>
-            </div>
-            <div class="p-6 bg-slate-800/30 rounded-lg border border-teal-500/20 hover:border-teal-400/50 transition">
-                <div class="text-3xl mb-3">⚡</div>
-                <h4 class="font-semibold text-white mb-2">Impara dall'Ambiente</h4>
-                <p class="text-gray-400 text-sm">Legge luce, movimento, acustica reale e adatta l'audio automaticamente.</p>
-            </div>
-            <div class="p-6 bg-slate-800/30 rounded-lg border border-teal-500/20 hover:border-teal-400/50 transition">
-                <div class="text-3xl mb-3">🔌</div>
-                <h4 class="font-semibold text-white mb-2">Open Standard</h4>
-                <p class="text-gray-400 text-sm">OSC integra qualsiasi sistema: QLab, Resolume, grandMA, TouchDesigner.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<style>
-.comparison-section {
-    background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(6, 182, 212, 0.05) 100%);
-}
-</style>
-
-
     </div>
 
     <!-- Torna su -->
-    <button id="backToTop" aria-label="Torna su" class="hidden fixed bottom-6 right-6 z-40 bg-teal-600 hover:bg-teal-500 text-white font-semibold px-4 py-2 rounded-full shadow-lg">↑ Torna su</button>
+    <button id="backToTop" aria-label="Torna su" class="hidden fixed bottom-6 right-6 z-40 bg-teal-600 hover:bg-teal-500 text-white font-semibold px-4 py-2 rounded-full shadow-lg">&uarr; Torna su</button>
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const accordionTriggers = document.querySelectorAll('[data-accordion-trigger]');
-            
+
             accordionTriggers.forEach(trigger => {
                 trigger.addEventListener('click', function () {
                     const contentId = this.getAttribute('data-accordion-trigger') + '-content';
@@ -539,24 +572,24 @@
             const backToTop = document.getElementById('backToTop');
             const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
             let ticking = false;
-            
+
             const toggleBackToTop = () => {
                 if (!backToTop) return;
                 if (window.scrollY > 500) backToTop.classList.remove('hidden');
                 else backToTop.classList.add('hidden');
                 ticking = false;
             };
-            
+
             const handleScroll = () => {
                 if (!ticking) {
                     requestAnimationFrame(toggleBackToTop);
                     ticking = true;
                 }
             };
-            
+
             window.addEventListener('scroll', handleScroll, { passive: true });
             toggleBackToTop();
-            
+
             if (backToTop) {
                 backToTop.addEventListener('click', () => {
                     window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
@@ -579,28 +612,28 @@
                 <p class="text-gray-400 text-center mb-8">
                     Hai un'idea o vuoi collaborare? Scrivimi direttamente compilando il form sottostante.
                 </p>
-                
+
                 <form id="contact-form" class="space-y-4 bg-slate-800/30 p-8 rounded-xl border border-teal-500/20">
                     <div>
                         <label for="name" class="block text-sm font-semibold text-gray-300 mb-2">Nome</label>
                         <input type="text" id="name" name="name" required placeholder="Il tuo nome" class="w-full px-4 py-2 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-teal-400 focus:ring-1 focus:ring-teal-400/50 transition-colors">
                     </div>
-                    
+
                     <div>
                         <label for="email" class="block text-sm font-semibold text-gray-300 mb-2">Email</label>
                         <input type="email" id="email" name="email" required placeholder="tua@email.com" class="w-full px-4 py-2 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-teal-400 focus:ring-1 focus:ring-teal-400/50 transition-colors">
                     </div>
-                    
+
                     <div>
                         <label for="subject" class="block text-sm font-semibold text-gray-300 mb-2">Oggetto</label>
                         <input type="text" id="subject" name="subject" required placeholder="es. MOOD per museo..." class="w-full px-4 py-2 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-teal-400 focus:ring-1 focus:ring-teal-400/50 transition-colors">
                     </div>
-                    
+
                     <div>
                         <label for="message" class="block text-sm font-semibold text-gray-300 mb-2">Messaggio</label>
                         <textarea id="message" name="message" required rows="5" placeholder="Raccontami del tuo progetto..." class="w-full px-4 py-2 bg-slate-700/50 border border-slate-600 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-teal-400 focus:ring-1 focus:ring-teal-400/50 transition-colors resize-none"></textarea>
                     </div>
-                    
+
                     <button type="submit" class="w-full bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-400 hover:to-cyan-400 text-white font-semibold py-3 rounded-lg transition-all transform hover:scale-105 active:scale-95">
                         Invia Messaggio
                     </button>
@@ -612,16 +645,16 @@
         <script>
         document.getElementById('contact-form').addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             const name = document.getElementById('name').value;
             const email = document.getElementById('email').value;
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value;
-            
+
             const btn = e.target.querySelector('button[type="submit"]');
             btn.disabled = true;
             btn.textContent = 'Invio...';
-            
+
             try {
                 // Invia via Formspree (NOTA: sostituisci xlglqynk con il tuo ID da formspree.io)
                 const response = await fetch('https://formspree.io/f/xlglqynk', {
@@ -637,12 +670,12 @@
                         message
                     })
                 });
-                
+
                 if (response.ok) {
-                    alert('Grazie! Ho ricevuto il tuo messaggio. Ti contatterò al più presto.');
+                    alert('Grazie! Ho ricevuto il tuo messaggio. Ti contatter\u00f2 al pi\u00f9 presto.');
                     document.getElementById('contact-form').reset();
                 } else {
-                    alert('Errore nell'invio. Per favore riprova.');
+                    alert('Errore nell\u2019invio. Per favore riprova.');
                 }
             } catch (error) {
                 console.error('Contact error:', error);
