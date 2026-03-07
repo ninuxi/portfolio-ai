@@ -1,0 +1,68 @@
+CLOUDFLARE DEPLOY - ISTRUZIONI UFFICIALI (PRODUZIONE)
+
+Obiettivo:
+- Pubblicare aiforlive.com SOLO tramite Cloudflare Worker (deploy diretto).
+- Non usare GitHub come trigger di deploy produzione.
+
+Stato attuale (da mantenere):
+- Dominio aiforlive.com e www.aiforlive.com instradati su Worker: portfolio-ai
+- Produzione aggiornata con comando wrangler deploy (non da GitHub Pages)
+
+REGOLE IMPORTANTI
+1) Deploy produzione: SOLO con wrangler deploy sul Worker "portfolio-ai".
+2) Push su GitHub: consentito per backup/versioning, ma NON deve essere usato come pipeline di deploy.
+3) Non cambiare route dominio dal Worker a Pages se non deciso esplicitamente.
+4) Se il sito non si aggiorna, rifare deploy Worker e poi verificare URL.
+
+----------------------------------------
+COMANDI STANDARD (DA ROOT REPO)
+----------------------------------------
+
+1) Login Cloudflare (se serve)
+   npx wrangler login
+
+2) Build cartella pulita di deploy
+   rm -rf _cf-deploy && mkdir _cf-deploy
+   rsync -av --delete \
+     --exclude '.git' \
+     --exclude 'jamais_wordpress' \
+     --exclude '_cf-deploy' \
+     --exclude '.wrangler' \
+     --exclude '.DS_Store' \
+     --exclude '*.docx' \
+     ./ _cf-deploy/
+
+3) Deploy diretto produzione su Worker
+   npx wrangler deploy --name portfolio-ai --assets _cf-deploy --compatibility-date 2026-03-07
+
+----------------------------------------
+VERIFICA POST-DEPLOY
+----------------------------------------
+
+Controllo marker aggiornamento:
+
+- IT:
+  curl -sL https://aiforlive.com/it | grep -n "Esperienze Audio AI Engineer"
+
+- EN:
+  curl -sL https://aiforlive.com/en | grep -n "Audio AI Engineer Experience"
+
+Se vedi una riga con numero (es. 536: ...), deploy ok.
+
+----------------------------------------
+NOTE SU FILE GRANDI
+----------------------------------------
+
+Cloudflare upload assets ha limite file per upload.
+Se un video blocca deploy, comprimerlo con ffmpeg mantenendo lo stesso nome file usato nel sito.
+
+Esempio:
+ffmpeg -y -i input.mp4 -vcodec libx264 -crf 32 -preset veryfast -acodec aac -b:a 96k output.mp4
+
+----------------------------------------
+POLICY GITHUB (IMPORTANTE)
+----------------------------------------
+
+- Push su GitHub NON e' il metodo di pubblicazione produzione.
+- La produzione e' aggiornata solo dal comando wrangler deploy sul Worker portfolio-ai.
+- Se si usa GitHub, considerarlo repository di codice, non pipeline live.
