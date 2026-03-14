@@ -3,15 +3,504 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MOOD moved</title>
-  <meta name="robots" content="noindex, nofollow, noarchive">
-  <meta http-equiv="refresh" content="0;url=https://mood.aiforlive.com/">
+  <title>MOOD | Adaptive Artistic Environment</title>
+  <meta name="description" content="MOOD e il sistema AI che orchestra audio, video e luci in tempo reale. Landing bilingue per musei, eventi e venue.">
+  <meta name="author" content="Antonio Mainenti">
+  <meta property="og:title" content="MOOD | Adaptive Artistic Environment">
+  <meta property="og:description" content="The space reads audience energy. MOOD orchestrates the experience.">
+  <meta property="og:image" content="https://aiforlive.com/images/linkcovermood.jpg">
+  <meta property="og:url" content="https://mood.aiforlive.com/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MOOD | Adaptive Artistic Environment">
+  <meta name="twitter:description" content="AI-driven control for immersive spaces.">
   <link rel="canonical" href="https://mood.aiforlive.com/">
+  <link rel="alternate" hreflang="it" href="https://mood.aiforlive.com/?lang=it">
+  <link rel="alternate" hreflang="en" href="https://mood.aiforlive.com/?lang=en">
+  <link rel="alternate" hreflang="x-default" href="https://mood.aiforlive.com/">
+  <link rel="icon" href="/favicon.ico?v=3" sizes="any">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png?v=3">
+  <link rel="icon" href="/favicon.svg?v=3" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png?v=3">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,600;6..72,700&family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #f4f1ec;
+      --surface: rgba(255,255,255,0.78);
+      --surface-strong: rgba(255,255,255,0.92);
+      --ink: #111827;
+      --ink-soft: #374151;
+      --line: rgba(17,24,39,0.12);
+      --accent: #0f766e;
+      --accent-2: #c2410c;
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+      --shadow-lg: 0 20px 55px rgba(16,24,40,0.13);
+      --shadow-md: 0 10px 30px rgba(16,24,40,0.09);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: 'Sora', sans-serif;
+      color: var(--ink);
+      line-height: 1.6;
+      background:
+        radial-gradient(circle at 12% 18%, rgba(245,158,11,0.19), transparent 35%),
+        radial-gradient(circle at 85% 10%, rgba(15,118,110,0.15), transparent 34%),
+        linear-gradient(160deg, #f8f7f3 0%, #ece8e1 55%, #f7efe2 100%);
+      background-attachment: fixed;
+    }
+
+    .container { width: min(1120px, 92vw); margin: 0 auto; }
+    .hidden { display: none; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 30;
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
+      background: rgba(244,241,236,0.82);
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    .brand-dot {
+      width: 30px;
+      height: 30px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, #0f766e, #f59e0b);
+    }
+
+    .lang-switch {
+      display: inline-flex;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      overflow: hidden;
+      background: var(--surface-strong);
+    }
+
+    .lang-switch button {
+      border: 0;
+      padding: 7px 12px;
+      background: transparent;
+      color: var(--ink-soft);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .lang-switch button.active {
+      background: #0f766e;
+      color: #ecfeff;
+    }
+
+    .hero {
+      padding: 72px 0 40px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: 'Newsreader', serif;
+      font-size: clamp(2rem, 4.8vw, 4.2rem);
+      line-height: 1.07;
+      letter-spacing: -0.02em;
+      max-width: 16ch;
+    }
+
+    .lead {
+      margin-top: 18px;
+      color: var(--ink-soft);
+      max-width: 56ch;
+    }
+
+    .hero-actions {
+      margin-top: 24px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      border-radius: 14px;
+      padding: 11px 17px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .btn:hover { transform: translateY(-1px); }
+
+    .btn-primary {
+      background: linear-gradient(125deg, #0f766e, #0d9488);
+      color: #f0fdfa;
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-secondary {
+      background: var(--surface-strong);
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .panel {
+      background: linear-gradient(160deg, rgba(255,255,255,0.93), rgba(255,255,255,0.66));
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      padding: 18px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .metrics {
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .metric {
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.86);
+      padding: 10px;
+      font-size: 0.88rem;
+      color: var(--ink-soft);
+    }
+
+    .metric strong {
+      display: block;
+      color: #0f766e;
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+
+    section { padding: 52px 0; }
+
+    .section-title {
+      margin: 0 0 8px;
+      font-family: 'Newsreader', serif;
+      font-size: clamp(1.7rem, 3vw, 2.6rem);
+    }
+
+    .section-lead {
+      margin: 0;
+      color: var(--ink-soft);
+      max-width: 68ch;
+    }
+
+    .cards {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      box-shadow: var(--shadow-md);
+      padding: 16px;
+    }
+
+    .card h3 { margin: 0 0 8px; font-size: 1rem; }
+    .card p { margin: 0; color: var(--ink-soft); font-size: 0.94rem; }
+
+    .gallery {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .gallery figure {
+      margin: 0;
+      border: 1px solid var(--line);
+      border-radius: 15px;
+      overflow: hidden;
+      background: var(--surface-strong);
+      box-shadow: var(--shadow-md);
+    }
+
+    .gallery img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+    }
+
+    .gallery figcaption {
+      padding: 9px 11px;
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      border-top: 1px solid var(--line);
+    }
+
+    .cta {
+      margin-top: 20px;
+      border: 1px solid rgba(194,65,12,0.2);
+      border-radius: 24px;
+      background: linear-gradient(140deg, rgba(255,244,236,0.95), rgba(255,237,213,0.72));
+      box-shadow: var(--shadow-lg);
+      padding: 24px;
+    }
+
+    .cta h2 {
+      margin: 0 0 8px;
+      font-family: 'Newsreader', serif;
+      font-size: clamp(1.6rem, 3vw, 2.3rem);
+    }
+
+    .cta p { margin: 0; color: #7c2d12; }
+
+    footer {
+      margin-top: 56px;
+      border-top: 1px solid var(--line);
+      padding: 18px 0 26px;
+      color: #4b5563;
+      font-size: 0.9rem;
+    }
+
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid rgba(15,118,110,0.35);
+      outline-offset: 2px;
+    }
+
+    @media (max-width: 960px) {
+      .hero { grid-template-columns: 1fr; padding-top: 46px; }
+      .cards { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 720px) {
+      .cards { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr; }
+      .metrics { grid-template-columns: 1fr; }
+      section { padding: 44px 0; }
+    }
+  </style>
   <script>
-    window.location.replace('https://mood.aiforlive.com/');
+    (function () {
+      const moodHost = 'mood.aiforlive.com';
+      const host = window.location.hostname.toLowerCase();
+      const isLocal = host === 'localhost' || host === '127.0.0.1';
+      if (!isLocal && host !== moodHost) {
+        window.location.replace('https://mood.aiforlive.com/');
+      }
+    })();
   </script>
 </head>
 <body>
-  <p>MOOD is available on <a href="https://mood.aiforlive.com/">mood.aiforlive.com</a>.</p>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <a class="brand" href="https://aiforlive.com/it.html">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>AI For Live · MOOD</span>
+      </a>
+      <div class="lang-switch" role="group" aria-label="Language switch">
+        <button type="button" id="lang-it" class="active">IT</button>
+        <button type="button" id="lang-en">EN</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div data-lang="it">
+      <section class="hero">
+        <div>
+          <h1>Lo spazio percepisce l'energia del pubblico. MOOD la orchestra.</h1>
+          <p class="lead">MOOD e una regia AI che analizza ambiente, movimento e audio in tempo reale per attivare automaticamente contenuti di luci, video e suono. Pensato per musei, eventi, venue e installazioni immersive.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contatti-it">Prenota una demo</a>
+            <a class="btn btn-secondary" href="https://aiforlive.com/it.html">Portfolio principale</a>
+          </div>
+        </div>
+        <aside class="panel">
+          <div class="metrics">
+            <article class="metric"><strong>&lt;200ms</strong>latenza AI → azione</article>
+            <article class="metric"><strong>5000+</strong>messaggi OSC / secondo</article>
+            <article class="metric"><strong>24/7</strong>operativita continuativa</article>
+          </div>
+        </aside>
+      </section>
+
+      <section>
+        <h2 class="section-title">Cosa rende MOOD diverso</h2>
+        <p class="section-lead">Non e una timeline statica: e un sistema che legge il contesto e decide in autonomia la risposta scenica migliore.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>Reattivita reale</h3>
+            <p>Audio, visual e luce rispondono al comportamento del pubblico nel momento in cui accade.</p>
+          </article>
+          <article class="card">
+            <h3>Integrazione professionale</h3>
+            <p>Dialoga con QLab, Resolume, TouchDesigner e pipeline OSC senza rifare tutto da zero.</p>
+          </article>
+          <article class="card">
+            <h3>Meno regia manuale</h3>
+            <p>Riduce operazioni ripetitive durante il live e libera tempo per direzione creativa e supervisione.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Integrazioni visive e audio</h2>
+        <div class="gallery">
+          <figure>
+            <img src="/images/mood_osc_qlab.png" alt="Controllo QLab via OSC" loading="lazy" decoding="async">
+            <figcaption>Controllo dinamico cue e volume in QLab.</figcaption>
+          </figure>
+          <figure>
+            <img src="/images/mood_osc_arena.jpg" alt="Controllo Resolume via OSC" loading="lazy" decoding="async">
+            <figcaption>Trigger visual e gestione layer in Resolume Arena.</figcaption>
+          </figure>
+          <figure>
+            <img src="/images/mood_osc_touchdesigner.png" alt="Pipeline TouchDesigner" loading="lazy" decoding="async">
+            <figcaption>Estensione pipeline visual con TouchDesigner.</figcaption>
+          </figure>
+          <figure>
+            <img src="/images/mood_osc_reaper.png" alt="Workflow audio in Reaper" loading="lazy" decoding="async">
+            <figcaption>Workflow audio adattivo per sound design live.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="contatti-it" class="cta">
+        <h2>Portiamo MOOD nel tuo spazio?</h2>
+        <p>Definiamo una demo su misura con obiettivi chiari: impatto scenico, affidabilita operativa e integrazione con il tuo setup AV.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/mainenti/" target="_blank" rel="noopener noreferrer">Contatta Antonio</a>
+        </div>
+      </section>
+    </div>
+
+    <div data-lang="en" class="hidden">
+      <section class="hero">
+        <div>
+          <h1>The space reads audience energy. MOOD orchestrates it.</h1>
+          <p class="lead">MOOD is an AI direction system that analyzes environment, movement, and sound in real time to trigger lighting, video, and audio content automatically. Built for museums, events, venues, and immersive installations.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact-en">Book a demo</a>
+            <a class="btn btn-secondary" href="https://aiforlive.com/en.html">Main portfolio</a>
+          </div>
+        </div>
+        <aside class="panel">
+          <div class="metrics">
+            <article class="metric"><strong>&lt;200ms</strong>AI to action latency</article>
+            <article class="metric"><strong>5000+</strong>OSC messages / second</article>
+            <article class="metric"><strong>24/7</strong>continuous operation</article>
+          </div>
+        </aside>
+      </section>
+
+      <section>
+        <h2 class="section-title">What makes MOOD different</h2>
+        <p class="section-lead">This is not a static timeline. It reads context continuously and selects the best scenic response in real time.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>Real-time reactivity</h3>
+            <p>Audio, visuals, and light respond to actual audience behavior as it happens.</p>
+          </article>
+          <article class="card">
+            <h3>Professional integrations</h3>
+            <p>Native integration with QLab, Resolume, TouchDesigner, and OSC pipelines.</p>
+          </article>
+          <article class="card">
+            <h3>Less manual operation</h3>
+            <p>Reduces repetitive live operations so teams focus on creative direction and quality control.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Visual and audio integrations</h2>
+        <div class="gallery">
+          <figure>
+            <img src="/images/mood_osc_qlab.png" alt="QLab control via OSC" loading="lazy" decoding="async">
+            <figcaption>Dynamic cue and volume control in QLab.</figcaption>
+          </figure>
+          <figure>
+            <img src="/images/mood_osc_arena.jpg" alt="Resolume control via OSC" loading="lazy" decoding="async">
+            <figcaption>Visual triggering and layer management in Resolume Arena.</figcaption>
+          </figure>
+          <figure>
+            <img src="/images/mood_osc_touchdesigner.png" alt="TouchDesigner pipeline" loading="lazy" decoding="async">
+            <figcaption>Extendable visual pipeline with TouchDesigner.</figcaption>
+          </figure>
+          <figure>
+            <img src="/images/mood_osc_reaper.png" alt="Adaptive audio workflow in Reaper" loading="lazy" decoding="async">
+            <figcaption>Adaptive audio workflow for live sound design.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section id="contact-en" class="cta">
+        <h2>Bring MOOD to your venue?</h2>
+        <p>Let's define a focused demo with clear goals: scenic impact, operational reliability, and fast AV integration.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://www.linkedin.com/in/mainenti/" target="_blank" rel="noopener noreferrer">Contact Antonio</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">MOOD · Adaptive Artistic Environment · AI For Live</div>
+  </footer>
+
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const langParam = params.get('lang');
+      const browserLang = (navigator.language || 'en').toLowerCase();
+      let lang = langParam === 'it' || langParam === 'en' ? langParam : (browserLang.startsWith('it') ? 'it' : 'en');
+
+      const sections = document.querySelectorAll('[data-lang]');
+      const itBtn = document.getElementById('lang-it');
+      const enBtn = document.getElementById('lang-en');
+
+      function applyLang(nextLang) {
+        lang = nextLang;
+        sections.forEach((section) => {
+          const isMatch = section.getAttribute('data-lang') === nextLang;
+          section.classList.toggle('hidden', !isMatch);
+        });
+        itBtn.classList.toggle('active', nextLang === 'it');
+        enBtn.classList.toggle('active', nextLang === 'en');
+      }
+
+      itBtn.addEventListener('click', function () { applyLang('it'); });
+      enBtn.addEventListener('click', function () { applyLang('en'); });
+      applyLang(lang);
+    })();
+  </script>
 </body>
 </html>
