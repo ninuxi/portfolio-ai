@@ -24,7 +24,22 @@
         const isMoodHost = host === 'mood.aiforlive.com';
 
         if (isMoodHost) {
-            window.location.replace('/mood.html');
+            // Render mood page content while keeping the URL at '/'.
+            fetch('/mood.html', { cache: 'no-store' })
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error('Unable to load mood page');
+                    }
+                    return response.text();
+                })
+                .then((html) => {
+                    document.open();
+                    document.write(html);
+                    document.close();
+                })
+                .catch(() => {
+                    window.location.replace('/mood.html');
+                });
         } else {
             const userLang = navigator.language || navigator.userLanguage;
             if (userLang.startsWith('it')) {
