@@ -234,6 +234,165 @@
     .card h3 { margin: 0 0 8px; font-size: 1rem; }
     .card p { margin: 0; color: var(--ink-soft); font-size: 0.94rem; }
 
+    .steps {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .step {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-lg);
+      background: var(--surface-strong);
+      box-shadow: var(--shadow-md);
+      padding: 18px;
+    }
+
+    .step-index {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 999px;
+      background: rgba(15,118,110,0.12);
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .step h3 {
+      margin: 0 0 8px;
+      font-size: 1.05rem;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.93rem;
+    }
+
+    .dark-band {
+      margin: 8px 0;
+      background: #111827;
+      color: #f9fafb;
+      border-radius: var(--radius-xl);
+      padding: 28px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .dark-band h2,
+    .dark-band h3,
+    .dark-band p,
+    .dark-band li {
+      color: inherit;
+    }
+
+    .dark-band .section-lead {
+      color: rgba(249,250,251,0.75);
+    }
+
+    .scenario-grid {
+      margin-top: 22px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    .scenario-panel,
+    .result-panel {
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.04);
+      padding: 18px;
+    }
+
+    .scenario-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .scenario-item {
+      border: 1px solid rgba(255,255,255,0.09);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.04);
+      padding: 12px 14px;
+    }
+
+    .scenario-item strong {
+      display: block;
+      margin-bottom: 4px;
+      color: #f9fafb;
+    }
+
+    .scenario-item span,
+    .result-panel li {
+      color: rgba(249,250,251,0.72);
+      font-size: 0.92rem;
+    }
+
+    .result-panel ul {
+      margin: 14px 0 0;
+      padding-left: 18px;
+    }
+
+    .logos {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .logo-chip {
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: var(--surface-strong);
+      padding: 9px 13px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .results {
+      margin-top: 24px;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+
+    .result-card {
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: var(--surface-strong);
+      box-shadow: var(--shadow-md);
+      padding: 16px;
+    }
+
+    .result-card strong {
+      display: block;
+      margin-bottom: 6px;
+      font-size: 1.3rem;
+      color: var(--accent);
+    }
+
+    .result-card span {
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+    }
+
+    .bullet-list {
+      margin: 16px 0 0;
+      padding-left: 18px;
+      color: var(--ink-soft);
+    }
+
+    .bullet-list li + li {
+      margin-top: 8px;
+    }
+
     .gallery {
       margin-top: 24px;
       display: grid;
@@ -298,12 +457,16 @@
     @media (max-width: 960px) {
       .hero { grid-template-columns: 1fr; padding-top: 46px; }
       .cards { grid-template-columns: 1fr 1fr; }
+      .steps { grid-template-columns: 1fr; }
+      .scenario-grid { grid-template-columns: 1fr; }
+      .results { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 720px) {
       .cards { grid-template-columns: 1fr; }
       .gallery { grid-template-columns: 1fr; }
       .metrics { grid-template-columns: 1fr; }
+      .results { grid-template-columns: 1fr; }
       section { padding: 44px 0; }
     }
   </style>
@@ -372,7 +535,71 @@
       </section>
 
       <section>
+        <h2 class="section-title">Tre passi, un'unica esperienza</h2>
+        <p class="section-lead">MOOD osserva, interpreta e orchestra. Questa struttura e quello che rende il sistema leggibile per il cliente e affidabile in produzione.</p>
+        <div class="steps">
+          <article class="step">
+            <span class="step-index">1</span>
+            <h3>Vede e ascolta</h3>
+            <p>Legge densita, movimento, volume ambientale, conversazione e ritmo generale dello spazio con sensori non invasivi.</p>
+          </article>
+          <article class="step">
+            <span class="step-index">2</span>
+            <h3>Interpreta</h3>
+            <p>Il motore AI riconosce lo stato del momento: contemplativo, sociale, energetico, misterioso o altri stati progettati su misura.</p>
+          </article>
+          <article class="step">
+            <span class="step-index">3</span>
+            <h3>Orchestra</h3>
+            <p>Invia azioni a cue audio, layer video, luci e parametri scenici in tempo reale, con regole e automazioni progettate sul contesto.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="dark-band">
+        <h2 class="section-title">Vedi MOOD in azione</h2>
+        <p class="section-lead">Non e solo una dashboard: e un sistema che trasforma segnali ambientali in scelte creative operative.</p>
+        <div class="scenario-grid">
+          <div class="scenario-panel">
+            <h3>Scenari di lettura</h3>
+            <div class="scenario-list">
+              <div class="scenario-item">
+                <strong>Sala calma</strong>
+                <span>Poche persone, basso rumore, movimento lento: il sistema apre texture morbide e visual minimali.</span>
+              </div>
+              <div class="scenario-item">
+                <strong>Sociale</strong>
+                <span>Conversazione diffusa, presenza media, energia costante: MOOD costruisce una scena piu accogliente e dinamica.</span>
+              </div>
+              <div class="scenario-item">
+                <strong>Alta energia</strong>
+                <span>Affluenza alta e movimento intenso: accelerazione dei visual, incremento del ritmo e interventi scenici piu decisi.</span>
+              </div>
+            </div>
+          </div>
+          <div class="result-panel">
+            <h3>Risposta del sistema</h3>
+            <ul>
+              <li>Trigger cue su QLab in base al mood rilevato.</li>
+              <li>Aggiornamento parametri e layer in Resolume Arena.</li>
+              <li>Pipeline espandibile verso TouchDesigner e controllo luci via OSC.</li>
+              <li>Logica riutilizzabile per eventi singoli o installazioni permanenti.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <h2 class="section-title">Integrazioni visive e audio</h2>
+        <p class="section-lead">MOOD valorizza lo stack che usi gia: software creativi, protocolli aperti e hardware leggero per elaborazione locale.</p>
+        <div class="logos">
+          <span class="logo-chip">QLab</span>
+          <span class="logo-chip">Resolume Arena</span>
+          <span class="logo-chip">TouchDesigner</span>
+          <span class="logo-chip">Open Sound Control</span>
+          <span class="logo-chip">Raspberry Pi 5 + AI HAT Hailo</span>
+          <span class="logo-chip">Workflow AV esistenti</span>
+        </div>
         <div class="gallery">
           <figure>
             <img src="/images/mood_osc_qlab.png" alt="Controllo QLab via OSC" loading="lazy" decoding="async">
@@ -393,9 +620,57 @@
         </div>
       </section>
 
+      <section>
+        <h2 class="section-title">Per chi e pensato</h2>
+        <p class="section-lead">MOOD non e un esperimento da laboratorio: e progettato per chi deve realizzare esperienze dal vivo affidabili e memorabili.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>Agenzie ed eventi corporate</h3>
+            <p>Per brand activation e ambienti immersivi che devono reagire al pubblico senza aumentare la complessita operativa.</p>
+          </article>
+          <article class="card">
+            <h3>Musei e gallerie</h3>
+            <p>Per installazioni che restano coerenti e coinvolgenti per molte ore consecutive, senza presidio creativo continuo.</p>
+          </article>
+          <article class="card">
+            <h3>Festival, venue e teatri</h3>
+            <p>Per contesti in cui impatto scenico, affidabilita e integrazione con la regia tecnica esistente sono tutti essenziali.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Misurabile dal primo giorno</h2>
+        <p class="section-lead">Il valore di MOOD non e solo estetico: e un sistema che punta a risultati osservabili sul campo, dal coinvolgimento alla riduzione degli interventi manuali.</p>
+        <div class="results">
+          <article class="result-card">
+            <strong>&lt;200ms</strong>
+            <span>Tempo di reazione tra lettura ambientale e risposta del sistema.</span>
+          </article>
+          <article class="result-card">
+            <strong>+15-30%</strong>
+            <span>Obiettivo di crescita del tempo medio di permanenza nell'area installativa.</span>
+          </article>
+          <article class="result-card">
+            <strong>Meno stress</strong>
+            <span>Riduzione delle micro-operazioni manuali durante il live per il team tecnico.</span>
+          </article>
+          <article class="result-card">
+            <strong>Piu coerenza</strong>
+            <span>Un ambiente che reagisce in modo consistente per tutta la durata dell'apertura o dell'evento.</span>
+          </article>
+        </div>
+      </section>
+
       <section id="contatti-it" class="cta">
         <h2>Portiamo MOOD nel tuo spazio?</h2>
         <p>Definiamo una demo su misura con obiettivi chiari: impatto scenico, affidabilita operativa e integrazione con il tuo setup AV.</p>
+        <ul class="bullet-list">
+          <li>Sopralluogo e valutazione tecnica preliminare.</li>
+          <li>Demo personalizzata sul tipo di spazio e sul pubblico previsto.</li>
+          <li>Integrazione con tecnologie gia installate o progetto da zero.</li>
+          <li>Formato flessibile: evento singolo, pilot o installazione permanente.</li>
+        </ul>
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://www.linkedin.com/in/mainenti/" target="_blank" rel="noopener noreferrer">Contatta Antonio</a>
         </div>
@@ -441,7 +716,71 @@
       </section>
 
       <section>
+        <h2 class="section-title">Three steps, one experience</h2>
+        <p class="section-lead">MOOD observes, interprets, and orchestrates. That structure makes the system understandable for clients and reliable in production.</p>
+        <div class="steps">
+          <article class="step">
+            <span class="step-index">1</span>
+            <h3>Sees and listens</h3>
+            <p>It reads density, movement, ambient volume, conversation, and the overall rhythm of the space through non-invasive sensors.</p>
+          </article>
+          <article class="step">
+            <span class="step-index">2</span>
+            <h3>Interprets</h3>
+            <p>The AI engine identifies the current atmosphere: contemplative, social, energetic, mysterious, or custom states designed for the project.</p>
+          </article>
+          <article class="step">
+            <span class="step-index">3</span>
+            <h3>Orchestrates</h3>
+            <p>It sends actions to audio cues, video layers, lights, and scenic parameters in real time through rules tailored to the venue.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="dark-band">
+        <h2 class="section-title">See MOOD in action</h2>
+        <p class="section-lead">This is not just a dashboard. It turns environmental signals into operational creative decisions.</p>
+        <div class="scenario-grid">
+          <div class="scenario-panel">
+            <h3>Reading scenarios</h3>
+            <div class="scenario-list">
+              <div class="scenario-item">
+                <strong>Calm room</strong>
+                <span>Few visitors, low noise, slow movement: the system opens soft textures and minimal visuals.</span>
+              </div>
+              <div class="scenario-item">
+                <strong>Social state</strong>
+                <span>Conversation, medium occupancy, stable energy: MOOD builds a warmer and more dynamic scene.</span>
+              </div>
+              <div class="scenario-item">
+                <strong>High energy</strong>
+                <span>High attendance and strong movement: faster visuals, stronger rhythmic response, and more decisive scenic actions.</span>
+              </div>
+            </div>
+          </div>
+          <div class="result-panel">
+            <h3>System response</h3>
+            <ul>
+              <li>Triggering cues in QLab according to the detected mood.</li>
+              <li>Updating parameters and layers in Resolume Arena.</li>
+              <li>Expandable pipeline toward TouchDesigner and lighting control over OSC.</li>
+              <li>Reusable logic for one-off events or permanent installations.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section>
         <h2 class="section-title">Visual and audio integrations</h2>
+        <p class="section-lead">MOOD extends the stack you already use: creative software, open protocols, and lightweight hardware for local processing.</p>
+        <div class="logos">
+          <span class="logo-chip">QLab</span>
+          <span class="logo-chip">Resolume Arena</span>
+          <span class="logo-chip">TouchDesigner</span>
+          <span class="logo-chip">Open Sound Control</span>
+          <span class="logo-chip">Raspberry Pi 5 + AI HAT Hailo</span>
+          <span class="logo-chip">Existing AV workflows</span>
+        </div>
         <div class="gallery">
           <figure>
             <img src="/images/mood_osc_qlab.png" alt="QLab control via OSC" loading="lazy" decoding="async">
@@ -462,9 +801,57 @@
         </div>
       </section>
 
+      <section>
+        <h2 class="section-title">Who it is for</h2>
+        <p class="section-lead">MOOD is not a lab experiment. It is designed for teams building live experiences that need both scenic impact and operational reliability.</p>
+        <div class="cards">
+          <article class="card">
+            <h3>Agencies and corporate events</h3>
+            <p>For brand activations and immersive environments that must react to the audience without increasing operational complexity.</p>
+          </article>
+          <article class="card">
+            <h3>Museums and galleries</h3>
+            <p>For installations that stay coherent and engaging for many hours, without constant creative supervision.</p>
+          </article>
+          <article class="card">
+            <h3>Festivals, venues, and theaters</h3>
+            <p>For contexts where scenic impact, reliability, and integration with existing technical direction all matter at once.</p>
+          </article>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="section-title">Measurable from day one</h2>
+        <p class="section-lead">MOOD is not only about aesthetics. It is designed to generate observable operational and audience-facing value from the first activation.</p>
+        <div class="results">
+          <article class="result-card">
+            <strong>&lt;200ms</strong>
+            <span>Reaction time between environmental reading and system response.</span>
+          </article>
+          <article class="result-card">
+            <strong>+15-30%</strong>
+            <span>Target increase in average dwell time inside the installation area.</span>
+          </article>
+          <article class="result-card">
+            <strong>Less stress</strong>
+            <span>Fewer repetitive manual interventions for the technical team during live operation.</span>
+          </article>
+          <article class="result-card">
+            <strong>More consistency</strong>
+            <span>A responsive environment that remains coherent for the full duration of the opening or event.</span>
+          </article>
+        </div>
+      </section>
+
       <section id="contact-en" class="cta">
         <h2>Bring MOOD to your venue?</h2>
         <p>Let's define a focused demo with clear goals: scenic impact, operational reliability, and fast AV integration.</p>
+        <ul class="bullet-list">
+          <li>Initial site review and technical assessment.</li>
+          <li>Custom demo based on your space and audience profile.</li>
+          <li>Integration with existing technology or full system design from scratch.</li>
+          <li>Flexible formats: one-off event, pilot project, or permanent installation.</li>
+        </ul>
         <div class="hero-actions">
           <a class="btn btn-primary" href="https://www.linkedin.com/in/mainenti/" target="_blank" rel="noopener noreferrer">Contact Antonio</a>
         </div>
