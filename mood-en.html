@@ -410,18 +410,10 @@
 
         <div style="padding:0 0 0 max(4vw, calc((100vw - 1120px)/2 + 24px));">
           <div class="kicker">Adaptive Art System</div>
-          <h1>The space perceives<br>the audience's emotions, <em>MOOD orchestrates it.</em></h1>
+          <h1>The space perceives<br>the audience's emotions, <em>MOOD orchestrates them.</em></h1>
           <p class="hero-sub">
             An AI system that reads the venue's atmosphere in real time: movement, voices, energy, feelings. Automatically adapts lights, audio and video. The audience changes, the environment responds.
           </p>
-          <div class="hero-actions">
-            <a href="#contact" class="btn btn-primary" style="font-size:0.95rem;padding:14px 24px;">
-              Contact us for information and collaborations
-            </a>
-            <a href="#how-it-works" class="btn btn-ghost" style="font-size:0.95rem;">
-              Discover how it works ↓
-            </a>
-          </div>
         </div>
 
         <div style="padding:0 max(4vw, calc((100vw - 1120px)/2 + 24px)) 0 0;">
@@ -628,19 +620,19 @@
         <!-- ── The three simulation states ── -->
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px;">
           <div style="background:rgba(99,102,241,0.08);border:1px solid rgba(99,102,241,0.25);border-radius:12px;padding:20px;">
-            <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#6366f1;margin-bottom:8px;">State 1 · Reflective</div>
-            <div style="font-size:0.97rem;font-weight:600;color:#fff;margin-bottom:8px;">Contemplation and listening</div>
-            <p style="font-size:0.83rem;color:rgba(255,255,255,0.55);line-height:1.6;margin:0;">Silent room, people standing still or moving slowly. The AI perceives deep attention and inwardness. MOOD responds with soft ambient soundscapes, dim lighting and slow visual transitions.</p>
+            <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#6366f1;margin-bottom:8px;">State 1 · Arrival</div>
+            <div style="font-size:0.97rem;font-weight:600;color:#fff;margin-bottom:8px;">The venue fills up</div>
+            <p style="font-size:0.83rem;color:rgba(255,255,255,0.55);line-height:1.6;margin:0;">Few people, the venue is still filling up. MOOD creates a welcoming and discreet atmosphere that sets the tone for the event.</p>
           </div>
           <div style="background:rgba(14,165,233,0.08);border:1px solid rgba(14,165,233,0.25);border-radius:12px;padding:20px;">
-            <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#0ea5e9;margin-bottom:8px;">State 2 · Social</div>
-            <div style="font-size:0.97rem;font-weight:600;color:#fff;margin-bottom:8px;">Interaction and connection</div>
-            <p style="font-size:0.83rem;color:rgba(255,255,255,0.55);line-height:1.6;margin:0;">Overlapping voices, fluid movement, small groups forming. The AI detects active interaction. MOOD amplifies with dynamic audio, warm lighting and vibrant visuals that accompany the social energy.</p>
+            <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#0ea5e9;margin-bottom:8px;">State 2 · In full swing</div>
+            <div style="font-size:0.97rem;font-weight:600;color:#fff;margin-bottom:8px;">The atmosphere warms up</div>
+            <p style="font-size:0.83rem;color:rgba(255,255,255,0.55);line-height:1.6;margin:0;">The venue is lively, some people are at the bar, groups are forming. MOOD raises the tone: fuller audio, warmer and more vibrant atmosphere.</p>
           </div>
           <div style="background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);border-radius:12px;padding:20px;">
-            <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#f59e0b;margin-bottom:8px;">State 3 · Dancing</div>
-            <div style="font-size:0.97rem;font-weight:600;color:#fff;margin-bottom:8px;">Energy and collective movement</div>
-            <p style="font-size:0.83rem;color:rgba(255,255,255,0.55);line-height:1.6;margin:0;">High energy, fast movement, shared rhythm. The AI perceives the emotional peak of the room. MOOD pushes to maximum: full sonic intensity, lights in sync and high-impact rhythmic visuals.</p>
+            <div style="font-size:0.68rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:#f59e0b;margin-bottom:8px;">State 3 · Peak</div>
+            <div style="font-size:0.97rem;font-weight:600;color:#fff;margin-bottom:8px;">The venue is packed</div>
+            <p style="font-size:0.83rem;color:rgba(255,255,255,0.55);line-height:1.6;margin:0;">The venue is packed, some people are starting to dance. MOOD adapts further: rhythm, intensity and visuals follow the collective movement.</p>
           </div>
         </div>
 
@@ -1347,7 +1339,6 @@
   }
 
   applyPhase('aperitivo', 0);
-  startPhaseTimer();
 
   document.querySelectorAll('.scenario-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -1355,8 +1346,7 @@
       btn.classList.add('active');
       currentScenarioKey = btn.dataset.scenario;
       currentPhaseIdx = 0;
-      applyPhase(currentScenarioKey, 0);
-      startPhaseTimer();
+      applyPhase(currentScenarioKey, phaseIdx);
     });
   });
 
@@ -1589,7 +1579,7 @@
     const tNow=performance.now();
     if(transState==='out'){
       transFade=Math.min(1,(tNow-transT0)/TRANS_OUT);
-      if(transFade>=1){phaseIdx=transNext;document.querySelectorAll('.pb').forEach((b,j)=>b.classList.toggle('active',j===phaseIdx));updateHud(PHASES[phaseIdx]);syncPersons(PHASES[phaseIdx].people);assignBehaviors(PHASES[phaseIdx]);moodLight.intensity=0.15;spots.forEach(s=>s.intensity=0.15);timerStart=tNow;if(audioOn)setActiveTrack(phaseIdx);transState='in';transT0=tNow;}
+      if(transFade>=1){phaseIdx=transNext;document.querySelectorAll('.pb').forEach((b,j)=>b.classList.toggle('active',j===phaseIdx));updateHud(PHASES[phaseIdx]);syncPersons(PHASES[phaseIdx].people);assignBehaviors(PHASES[phaseIdx]);moodLight.intensity=0.15;spots.forEach(s=>s.intensity=0.15);timerStart=tNow;if(audioOn)setActiveTrack(phaseIdx);transState='in';transT0=tNow;clearInterval(phaseTimer);currentPhaseIdx=phaseIdx;applyPhase(currentScenarioKey,phaseIdx);}
     } else if(transState==='in'){transFade=Math.max(0,1-(tNow-transT0)/TRANS_IN);if(transFade<=0){transFade=0;transState='idle';}}
     renderer.toneMappingExposure=exposureBase*(1-transFade);
     if(audioOn&&currentAudIdx>=0){audEls[currentAudIdx].volume=TARGET_VOL*(1-transFade);audEls.forEach((a,j)=>{if(j!==currentAudIdx&&!a.paused){a.volume=0;a.pause();}});}
